@@ -1,21 +1,30 @@
-extends Node
+extends Node2D
 
-@export var enemy_scene: PackedScene  # Variável exportada para colocar a cena do inimigo
-@export var spawn_interval: float = 1.0
+@export var enemy_scene: PackedScene
+@export var spawn_interval: float = 0.5  # tempo entre inimigos
+@export var enemies_per_wave: int = 8    # quantos inimigos por onda
+@export var vertical_spacing: int = 60   # distância em Y entre inimigos
 
-var timer: float = 0.0
 var screen_size: Vector2
 
 func _ready():
-	screen_size = get_viewport().get_visible_rect().size  # CORREÇÃO
+	screen_size = get_viewport_rect().size
+	start_wave()
 
-func _process(delta):
-	timer += delta
-	if timer >= spawn_interval:
-		timer = 0
-		spawn_enemy()
+func start_wave():
+	for i in range(enemies_per_wave):
+		spawn_enemy(i)
+		await get_tree().create_timer(spawn_interval).timeout
 
-func spawn_enemy():
-	var enemy = enemy_scene.instantiate()  # cria uma instância do inimigo
-	get_parent().add_child(enemy)          # adiciona dinamicamente na cena Main
-	enemy.position = Vector2(randi_range(20, screen_size.x - 20), 0)
+func spawn_enemy(index: int):
+	if enemy_scene == null:
+		print("⚠️ Nenhuma cena de inimigo atribuída no Inspector!")
+		return
+	
+	var enemy = enemy_scene.instantiate()
+	get_parent().add_child(enemy)
+
+	# começa fora da tela (à direita)
+	enemy.position.x = 0
+	# cada inimigo nasce mais embaixo (formando a “coluna de hambúrgueres”)
+	enemy.position.y = 100 + (index * vertical_spacing)

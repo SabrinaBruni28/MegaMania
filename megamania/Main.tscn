@@ -11,7 +11,7 @@ size = Vector2(38, 41.5)
 
 [node name="Main" type="Node2D"]
 
-[node name="EnemySpawner" type="Node" parent="."]
+[node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("4_cm0pq")
 enemy_scene = ExtResource("5_fos0i")
 
