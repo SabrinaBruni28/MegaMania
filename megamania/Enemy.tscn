@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://do4w1fobj3axc"]
+
+[ext_resource type="Script" uid="uid://dshvevalahxs7" path="res://hamburguer.gd" id="1_tt7e2"]
+
+[node name="Enemy" type="Node2D"]
+
+[node name="Hamburguer" type="Area2D" parent="."]
+script = ExtResource("1_tt7e2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hamburguer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hamburguer"]
