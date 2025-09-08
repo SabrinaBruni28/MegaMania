@@ -1,28 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://r2xoh1g28bg8"]
+[gd_scene load_steps=7 format=3 uid="uid://r2xoh1g28bg8"]
 
 [ext_resource type="Script" uid="uid://raa8qjph5xub" path="res://player.gd" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://cxnmncgp30g7w" path="res://Bullet.tscn" id="2_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://c2euqrjxpc4as" path="res://assets/nave.png" id="3_cm0pq"]
 [ext_resource type="Script" uid="uid://0bpwrqgh83st" path="res://enemy_spawner.gd" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://do4w1fobj3axc" path="res://Enemy.tscn" id="5_fos0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
-size = Vector2(38, 57)
+size = Vector2(38, 41.5)
 
 [node name="Main" type="Node2D"]
 
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("4_cm0pq")
+enemy_scene = ExtResource("5_fos0i")
+
 [node name="Player" type="Area2D" parent="."]
+position = Vector2(109, 629)
 script = ExtResource("1_uu6xs")
 bullet_scene = ExtResource("2_cm0pq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 3
-position = Vector2(137, 115)
-scale = Vector2(1.02439, 1.31818)
 texture = ExtResource("3_cm0pq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(138, 115.5)
+position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_cm0pq")
-
-[node name="EnemySpawner" type="Node" parent="."]
-script = ExtResource("4_cm0pq")

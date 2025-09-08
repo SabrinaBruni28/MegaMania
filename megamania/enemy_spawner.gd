@@ -7,7 +7,7 @@ var timer: float = 0.0
 var screen_size: Vector2
 
 func _ready():
-	screen_size = get_viewport_rect().size
+	screen_size = get_viewport().get_visible_rect().size  # CORREÇÃO
 
 func _process(delta):
 	timer += delta

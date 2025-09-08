@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://do4w1fobj3axc"]
+[gd_scene load_steps=4 format=3 uid="uid://do4w1fobj3axc"]
 
 [ext_resource type="Script" uid="uid://dshvevalahxs7" path="res://hamburguer.gd" id="1_tt7e2"]
+[ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/hamburguer.png" id="2_s7bn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
+size = Vector2(40, 24)
 
 [node name="Enemy" type="Node2D"]
 
@@ -8,5 +12,10 @@
 script = ExtResource("1_tt7e2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hamburguer"]
+position = Vector2(87, 70)
+scale = Vector2(0.553333, 0.519608)
+texture = ExtResource("2_s7bn3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hamburguer"]
+position = Vector2(87, 71)
+shape = SubResource("RectangleShape2D_2hac7")
