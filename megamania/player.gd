@@ -6,6 +6,8 @@ var screen_size: Vector2
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	position.x = screen_size.x/2
+	position.y = screen_size.y - 50
 
 func _process(delta):
 	var direction = Vector2.ZERO
@@ -22,5 +24,5 @@ func _process(delta):
 	
 func shoot():
 	var bullet = bullet_scene.instantiate()
-	bullet.position = position
+	bullet.position.x = position.x
 	get_parent().add_child(bullet)

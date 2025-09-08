@@ -6,6 +6,7 @@ var screen_size: Vector2
 func _ready():
 	add_to_group("bullets")
 	screen_size = get_viewport_rect().size
+	position.y = screen_size.y - 70
 
 func _process(delta):
 	position.y -= speed * delta

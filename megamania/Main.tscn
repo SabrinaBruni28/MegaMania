@@ -16,7 +16,6 @@ script = ExtResource("4_cm0pq")
 enemy_scene = ExtResource("5_fos0i")
 
 [node name="Player" type="Area2D" parent="."]
-position = Vector2(109, 629)
 script = ExtResource("1_uu6xs")
 bullet_scene = ExtResource("2_cm0pq")
 
