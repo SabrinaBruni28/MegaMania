@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwm5lji615xfj"
-path="res://.godot/imported/dice.png-e5d359870d3fd9a3f63c876c162e5dc0.ctex"
+uid="uid://de7fec7arv8y4"
+path="res://.godot/imported/radial_tire.png-3239c54e9790fcfae12cdfbceeeafb4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dice.png"
-dest_files=["res://.godot/imported/dice.png-e5d359870d3fd9a3f63c876c162e5dc0.ctex"]
+source_file="res://assets/Imagens/radial_tire.png"
+dest_files=["res://.godot/imported/radial_tire.png-3239c54e9790fcfae12cdfbceeeafb4b.ctex"]
 
 [params]
 

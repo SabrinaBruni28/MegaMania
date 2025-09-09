@@ -1,24 +1,24 @@
 [gd_scene load_steps=18 format=3 uid="uid://do4w1fobj3axc"]
 
 [ext_resource type="Script" uid="uid://dshvevalahxs7" path="res://hamburguer.gd" id="1_tt7e2"]
-[ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/hamburguer.png" id="2_s7bn3"]
-[ext_resource type="Texture2D" uid="uid://dxasvrs0rbrn0" path="res://assets/cookie.png" id="3_2hac7"]
+[ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/Imagens/hamburguer.png" id="2_jccr3"]
 [ext_resource type="Script" uid="uid://jygk58j5fn5j" path="res://cookie.gd" id="3_e6d4v"]
+[ext_resource type="Texture2D" uid="uid://dxasvrs0rbrn0" path="res://assets/Imagens/cookie.png" id="4_jccr3"]
 [ext_resource type="Script" uid="uid://ckiyue6yfd23r" path="res://bug.gd" id="5_qp131"]
-[ext_resource type="Texture2D" uid="uid://rcd2eiwj7dbr" path="res://assets/bug.png" id="6_6do27"]
+[ext_resource type="Texture2D" uid="uid://rcd2eiwj7dbr" path="res://assets/Imagens/bug.png" id="6_jccr3"]
 [ext_resource type="Script" uid="uid://dw1wngu7qysjo" path="res://radial_tire.gd" id="7_rvmyp"]
-[ext_resource type="Texture2D" uid="uid://de7fec7arv8y4" path="res://assets/radial_tire.png" id="8_2nxwx"]
+[ext_resource type="Texture2D" uid="uid://de7fec7arv8y4" path="res://assets/Imagens/radial_tire.png" id="8_jccr3"]
 [ext_resource type="Script" uid="uid://cakqxo2ardb37" path="res://diamond.gd" id="9_52xpa"]
-[ext_resource type="Texture2D" uid="uid://cw11cqed5eu47" path="res://assets/diamond.png" id="10_jdgko"]
+[ext_resource type="Texture2D" uid="uid://cw11cqed5eu47" path="res://assets/Imagens/diamond.png" id="10_jccr3"]
 [ext_resource type="Script" uid="uid://b5dobd8bkevwv" path="res://steam_aron.gd" id="11_j4qr3"]
-[ext_resource type="Texture2D" uid="uid://byx8jk0422mc0" path="res://assets/steam_aron.png" id="12_73x2u"]
+[ext_resource type="Texture2D" uid="uid://byx8jk0422mc0" path="res://assets/Imagens/steam_aron.png" id="12_jccr3"]
 [ext_resource type="Script" uid="uid://b2lqo48nu42vy" path="res://bow_tie.gd" id="13_2iwxp"]
-[ext_resource type="Texture2D" uid="uid://cpe22w2kkxnca" path="res://assets/bow_tie.png" id="14_4v6dm"]
+[ext_resource type="Texture2D" uid="uid://cpe22w2kkxnca" path="res://assets/Imagens/bow_tie.png" id="14_jccr3"]
 [ext_resource type="Script" uid="uid://yt63ym3jpsqe" path="res://dice.gd" id="15_2r3mv"]
-[ext_resource type="Texture2D" uid="uid://dwm5lji615xfj" path="res://assets/dice.png" id="16_jccr3"]
+[ext_resource type="Texture2D" uid="uid://dwm5lji615xfj" path="res://assets/Imagens/dice.png" id="16_jccr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
-size = Vector2(40, 24)
+size = Vector2(40, 27)
 
 [node name="Enemy" type="Node2D"]
 
@@ -27,7 +27,7 @@ script = ExtResource("1_tt7e2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hamburguer"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("2_s7bn3")
+texture = ExtResource("2_jccr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hamburguer"]
 shape = SubResource("RectangleShape2D_2hac7")
@@ -37,7 +37,7 @@ script = ExtResource("3_e6d4v")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cookie"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("3_2hac7")
+texture = ExtResource("4_jccr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie"]
 shape = SubResource("RectangleShape2D_2hac7")
@@ -47,7 +47,7 @@ script = ExtResource("5_qp131")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bug"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("6_6do27")
+texture = ExtResource("6_jccr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bug"]
 shape = SubResource("RectangleShape2D_2hac7")
@@ -57,7 +57,7 @@ script = ExtResource("7_rvmyp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Radial Tire"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("8_2nxwx")
+texture = ExtResource("8_jccr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Radial Tire"]
 shape = SubResource("RectangleShape2D_2hac7")
@@ -67,7 +67,7 @@ script = ExtResource("9_52xpa")
 
 [node name="Sprite2D" type="Sprite2D" parent="Diamond"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("10_jdgko")
+texture = ExtResource("10_jccr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Diamond"]
 shape = SubResource("RectangleShape2D_2hac7")
@@ -77,7 +77,7 @@ script = ExtResource("11_j4qr3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Steam Aron"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("12_73x2u")
+texture = ExtResource("12_jccr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Steam Aron"]
 shape = SubResource("RectangleShape2D_2hac7")
@@ -87,7 +87,7 @@ script = ExtResource("13_2iwxp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bow Tie"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("14_4v6dm")
+texture = ExtResource("14_jccr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bow Tie"]
 shape = SubResource("RectangleShape2D_2hac7")
@@ -100,6 +100,7 @@ scale = Vector2(0.553333, 0.519608)
 texture = ExtResource("16_jccr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dice"]
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_2hac7")
 
 [connection signal="area_entered" from="Hamburguer" to="Hamburguer" method="_on_area_entered"]

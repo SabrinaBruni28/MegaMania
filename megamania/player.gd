@@ -34,3 +34,6 @@ func shoot():
 	var bullet = bullet_scene.instantiate()
 	bullet.position.x = position.x
 	get_parent().add_child(bullet)
+	
+	# toca o som
+	$ShootSound.play()

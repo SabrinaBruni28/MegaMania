@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de7fec7arv8y4"
-path="res://.godot/imported/radial_tire.png-bbbdffcfb224d694e64a12144b3aaaf0.ctex"
+uid="uid://dxasvrs0rbrn0"
+path="res://.godot/imported/cookie.png-9ddd7cbd8978f941c97cb864adc702a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/radial_tire.png"
-dest_files=["res://.godot/imported/radial_tire.png-bbbdffcfb224d694e64a12144b3aaaf0.ctex"]
+source_file="res://assets/Imagens/cookie.png"
+dest_files=["res://.godot/imported/cookie.png-9ddd7cbd8978f941c97cb864adc702a7.ctex"]
 
 [params]
 

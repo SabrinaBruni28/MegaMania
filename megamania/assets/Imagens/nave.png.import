@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xrj1w4lqr0uo"
-path="res://.godot/imported/hamburguer.png-4505273fc3721410a565b501862e4ea8.ctex"
+uid="uid://c2euqrjxpc4as"
+path="res://.godot/imported/nave.png-2a9090d66cf746190d2c46189eb2c38f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hamburguer.png"
-dest_files=["res://.godot/imported/hamburguer.png-4505273fc3721410a565b501862e4ea8.ctex"]
+source_file="res://assets/Imagens/nave.png"
+dest_files=["res://.godot/imported/nave.png-2a9090d66cf746190d2c46189eb2c38f.ctex"]
 
 [params]
 
