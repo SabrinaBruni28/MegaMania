@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var bullet_scene: PackedScene
-@export var speed: int = 400  # velocidade da nave
+@export var speed: int = 300  # velocidade da nave
 @export var shoot_interval: float = 0.8  # tempo entre tiros
 var screen_size: Vector2
 var shoot_timer: float = 0
