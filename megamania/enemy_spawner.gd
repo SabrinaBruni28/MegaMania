@@ -3,7 +3,6 @@ extends Node2D
 @export var enemy_scene: PackedScene
 @export var spawn_interval: float = 0.5  # tempo entre inimigos
 @export var enemies_per_wave: int = 8    # quantos inimigos por onda
-@export var vertical_spacing: int = 60   # distância em Y entre inimigos
 
 var screen_size: Vector2
 
@@ -27,4 +26,4 @@ func spawn_enemy(index: int):
 	# começa fora da tela (à direita)
 	enemy.position.x = 0
 	# cada inimigo nasce mais embaixo (formando a “coluna de hambúrgueres”)
-	enemy.position.y = 100 + (index * vertical_spacing)
+	enemy.position.y = 100 + index

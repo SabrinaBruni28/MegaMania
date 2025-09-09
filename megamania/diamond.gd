@@ -7,7 +7,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	
 func _process(delta):
-	position.x += speed * delta
+	position.x += speed * delta * 3
 	if position.x > screen_size.x:  # se sair da tela pela esquerda
 		position.x = 0
 
