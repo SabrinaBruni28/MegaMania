@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://do4w1fobj3axc"]
+[gd_scene load_steps=19 format=3 uid="uid://do4w1fobj3axc"]
 
 [ext_resource type="Script" uid="uid://dshvevalahxs7" path="res://hamburguer.gd" id="1_tt7e2"]
 [ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/Imagens/hamburguer.png" id="2_jccr3"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cpe22w2kkxnca" path="res://assets/Imagens/bow_tie.png" id="14_jccr3"]
 [ext_resource type="Script" uid="uid://yt63ym3jpsqe" path="res://dice.gd" id="15_2r3mv"]
 [ext_resource type="Texture2D" uid="uid://dwm5lji615xfj" path="res://assets/Imagens/dice.png" id="16_jccr3"]
+[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/Sons/colisao.mp3" id="17_jd3y4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
 size = Vector2(40, 27)
@@ -102,6 +103,9 @@ texture = ExtResource("16_jccr3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dice"]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_2hac7")
+
+[node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_jd3y4")
 
 [connection signal="area_entered" from="Hamburguer" to="Hamburguer" method="_on_area_entered"]
 [connection signal="area_entered" from="Cookie" to="Cookie" method="_on_area_entered"]

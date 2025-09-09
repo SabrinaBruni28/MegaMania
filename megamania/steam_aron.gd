@@ -38,3 +38,5 @@ func _on_area_entered(area):
 	if area.is_in_group("bullets"):
 		queue_free()
 		area.queue_free()
+		# toca o som
+		get_parent().get_node("CollisionSound").play()
