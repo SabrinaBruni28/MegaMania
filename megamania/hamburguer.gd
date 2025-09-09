@@ -11,7 +11,11 @@ func _process(delta):
 	if position.x > screen_size.x:  # se sair da tela pela esquerda
 		position.x = 0
 
-func _on_body_entered(body):
-	if body.is_in_group("bullets"):
+func _on_area_entered(area):
+	if area.is_in_group("bullets"):
 		queue_free()       # remove o inimigo
-		body.queue_free()  # remove a bala
+		area.queue_free()  # remove a bala
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
