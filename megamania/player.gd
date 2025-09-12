@@ -2,9 +2,8 @@ extends Area2D
 
 @export var bullet_scene: PackedScene
 @export var speed: int = 300  # velocidade da nave
-@export var shoot_interval: float = 0.8  # tempo entre tiros
 var screen_size: Vector2
-var shoot_timer: float = 0
+var can_shoot: bool = true
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -12,6 +11,9 @@ func _ready():
 	position.y = screen_size.y - 50
 
 func _process(delta):
+	if not can_shoot and get_tree().get_nodes_in_group("bullets").size() == 0:
+		can_shoot = true
+
 	var direction = Vector2.ZERO
 	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
@@ -21,12 +23,8 @@ func _process(delta):
 	position += direction * speed * delta
 	position.x = clamp(position.x, 50, screen_size.x - 50)  # mantém dentro da tela
 
-	# Controle de disparo contínuo
-	shoot_timer -= delta
-	if Input.is_action_pressed("ui_accept"):
-		if shoot_timer <= 0:
-			shoot()
-			shoot_timer = shoot_interval
+	if Input.is_action_pressed("ui_accept") and can_shoot:
+		shoot()
 	
 func shoot():
 	var bullet = bullet_scene.instantiate()
@@ -34,3 +32,4 @@ func shoot():
 	get_parent().add_child(bullet)
 	# toca o som
 	$ShootSound.play()
+	can_shoot = false

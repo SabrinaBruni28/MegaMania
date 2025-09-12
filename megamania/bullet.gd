@@ -2,7 +2,6 @@ extends Area2D
 
 @export var speed: int = 500
 var screen_size: Vector2
-signal bullet_disappeared
 
 func _ready():
 	add_to_group("bullets")
@@ -12,5 +11,4 @@ func _ready():
 func _process(delta):
 	position.y -= speed * delta
 	if position.y <= 0:
-		emit_signal("bullet_disappeared")
 		queue_free()
