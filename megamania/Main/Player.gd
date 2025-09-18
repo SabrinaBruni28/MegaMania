@@ -34,3 +34,11 @@ func shoot():
 	# toca o som
 	$ShootSound.play()
 	can_shoot = false
+
+func explode():
+	var explosion_scene = preload("res://Effects/Explosion.tscn")
+	var explosion = explosion_scene.instantiate()
+	explosion.position = position
+	get_tree().current_scene.add_child(explosion)
+
+	queue_free()  # remove a nave
