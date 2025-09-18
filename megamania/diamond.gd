@@ -17,3 +17,9 @@ func _on_area_entered(area):
 		area.queue_free()  # remove a bala
 		# toca o som
 		get_parent().get_node("CollisionSound").play()
+		
+	elif area.is_in_group("nave"):
+		queue_free()       # remove o inimigo
+		area.queue_free()  # remove a nave
+		# toca o som
+		get_parent().get_node("CollisionSound").play()

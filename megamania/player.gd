@@ -6,6 +6,7 @@ var screen_size: Vector2
 var can_shoot: bool = true
 
 func _ready():
+	add_to_group("nave")
 	screen_size = get_viewport_rect().size
 	position.x = screen_size.x/2
 	position.y = screen_size.y - 50
