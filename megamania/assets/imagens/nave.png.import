@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxasvrs0rbrn0"
-path="res://.godot/imported/cookie.png-9ddd7cbd8978f941c97cb864adc702a7.ctex"
+uid="uid://c2euqrjxpc4as"
+path="res://.godot/imported/nave.png-45acc251fcc39757fbca5f41ddcbef1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Imagens/cookie.png"
-dest_files=["res://.godot/imported/cookie.png-9ddd7cbd8978f941c97cb864adc702a7.ctex"]
+source_file="res://assets/imagens/nave.png"
+dest_files=["res://.godot/imported/nave.png-45acc251fcc39757fbca5f41ddcbef1d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xrj1w4lqr0uo"
-path="res://.godot/imported/hamburguer.png-32519ed308ff4447631b6248d7a05f3a.ctex"
+uid="uid://dxasvrs0rbrn0"
+path="res://.godot/imported/cookie.png-3ccd6a490fa211a921ae3afd1b52ba38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Imagens/hamburguer.png"
-dest_files=["res://.godot/imported/hamburguer.png-32519ed308ff4447631b6248d7a05f3a.ctex"]
+source_file="res://assets/imagens/cookie.png"
+dest_files=["res://.godot/imported/cookie.png-3ccd6a490fa211a921ae3afd1b52ba38.ctex"]
 
 [params]
 

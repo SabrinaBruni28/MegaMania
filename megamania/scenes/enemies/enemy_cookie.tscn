@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnanyrp0xeksm"]
 
-[ext_resource type="Script" uid="uid://c2sxmdotpa4wd" path="res://Enemies/EnemyCookie.gd" id="1_1iwyh"]
-[ext_resource type="Texture2D" uid="uid://dxasvrs0rbrn0" path="res://assets/Imagens/cookie.png" id="2_1iwyh"]
-[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/Sons/colisao.mp3" id="3_r8xij"]
+[ext_resource type="Script" uid="uid://c2sxmdotpa4wd" path="res://scripts/enemy_cookie.gd" id="1_fm07k"]
+[ext_resource type="Texture2D" uid="uid://dxasvrs0rbrn0" path="res://assets/imagens/cookie.png" id="2_g77eu"]
+[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/audios/colisao.mp3" id="3_vsg34"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5xl4"]
 size = Vector2(36, 18)
@@ -11,17 +11,17 @@ size = Vector2(36, 18)
 scale = Vector2(1.5, 1.5)
 
 [node name="Cookie" type="Area2D" parent="."]
-script = ExtResource("1_1iwyh")
+script = ExtResource("1_fm07k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cookie"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("2_1iwyh")
+texture = ExtResource("2_g77eu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_e5xl4")
 
 [node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_r8xij")
+stream = ExtResource("3_vsg34")
 
 [connection signal="area_entered" from="Cookie" to="Cookie" method="_on_area_entered"]

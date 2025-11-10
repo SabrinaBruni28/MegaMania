@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://co13s3fqvlofr"]
 
-[ext_resource type="Script" uid="uid://c3hiceckls58t" path="res://Effects/Explotion.gd" id="1_yqkxm"]
+[ext_resource type="Script" uid="uid://c3hiceckls58t" path="res://scripts/explotion.gd" id="1_urivy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s05r2"]
 
@@ -13,4 +13,4 @@ amount = 25
 one_shot = true
 direction = Vector2(0, 0)
 gravity = Vector2(0, 0)
-script = ExtResource("1_yqkxm")
+script = ExtResource("1_urivy")

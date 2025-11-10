@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://2ajubpfw3d5k"]
 
-[ext_resource type="Script" uid="uid://dshvevalahxs7" path="res://Enemies/EnemyHamburguer.gd" id="1_glykh"]
-[ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/Imagens/hamburguer.png" id="2_0etsl"]
-[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/Sons/colisao.mp3" id="3_0etsl"]
+[ext_resource type="Script" uid="uid://dshvevalahxs7" path="res://scripts/enemy_hamburguer.gd" id="1_xowhf"]
+[ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/imagens/hamburguer.png" id="2_7nwaw"]
+[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/audios/colisao.mp3" id="3_ob10x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3o6x2"]
 size = Vector2(40, 27)
@@ -11,16 +11,16 @@ size = Vector2(40, 27)
 scale = Vector2(1.5, 1.5)
 
 [node name="Hamburguer" type="Area2D" parent="."]
-script = ExtResource("1_glykh")
+script = ExtResource("1_xowhf")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hamburguer"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("2_0etsl")
+texture = ExtResource("2_7nwaw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hamburguer"]
 shape = SubResource("RectangleShape2D_3o6x2")
 
 [node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_0etsl")
+stream = ExtResource("3_ob10x")
 
 [connection signal="area_entered" from="Hamburguer" to="Hamburguer" method="_on_area_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpe22w2kkxnca"
-path="res://.godot/imported/bow_tie.png-b8a4b26ed29818c5bd601a8a1b2905c8.ctex"
+uid="uid://b8avk8nt3xgvx"
+path="res://.godot/imported/white.png-1de1d0f4101f1243cccbfd1add12c173.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Imagens/bow_tie.png"
-dest_files=["res://.godot/imported/bow_tie.png-b8a4b26ed29818c5bd601a8a1b2905c8.ctex"]
+source_file="res://assets/imagens/white.png"
+dest_files=["res://.godot/imported/white.png-1de1d0f4101f1243cccbfd1add12c173.ctex"]
 
 [params]
 

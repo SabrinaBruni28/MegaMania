@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byx8jk0422mc0"
-path="res://.godot/imported/steam_aron.png-717af3d9bb7810402ca81d8646f3df84.ctex"
+uid="uid://rcd2eiwj7dbr"
+path="res://.godot/imported/bug.png-a05ed867269ecaa4a379d339a1189e37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Imagens/steam_aron.png"
-dest_files=["res://.godot/imported/steam_aron.png-717af3d9bb7810402ca81d8646f3df84.ctex"]
+source_file="res://assets/imagens/bug.png"
+dest_files=["res://.godot/imported/bug.png-a05ed867269ecaa4a379d339a1189e37.ctex"]
 
 [params]
 

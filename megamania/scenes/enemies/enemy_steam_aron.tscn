@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://nwom061bfrx8"]
 
-[ext_resource type="Script" uid="uid://b5dobd8bkevwv" path="res://Enemies/EnemySteamAron.gd" id="1_5yby0"]
-[ext_resource type="Texture2D" uid="uid://byx8jk0422mc0" path="res://assets/Imagens/steam_aron.png" id="2_agrq7"]
-[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/Sons/colisao.mp3" id="3_agrq7"]
+[ext_resource type="Script" uid="uid://b5dobd8bkevwv" path="res://scripts/enemy_steam_aron.gd" id="1_4ua5s"]
+[ext_resource type="Texture2D" uid="uid://byx8jk0422mc0" path="res://assets/imagens/steam_aron.png" id="2_rtfba"]
+[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/audios/colisao.mp3" id="3_2jukv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvfs6"]
 size = Vector2(40, 27)
@@ -11,16 +11,16 @@ size = Vector2(40, 27)
 scale = Vector2(1.5, 1.5)
 
 [node name="Steam Aron" type="Area2D" parent="."]
-script = ExtResource("1_5yby0")
+script = ExtResource("1_4ua5s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Steam Aron"]
 scale = Vector2(0.553333, 0.519608)
-texture = ExtResource("2_agrq7")
+texture = ExtResource("2_rtfba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Steam Aron"]
 shape = SubResource("RectangleShape2D_mvfs6")
 
 [node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_agrq7")
+stream = ExtResource("3_2jukv")
 
 [connection signal="area_entered" from="Steam Aron" to="Steam Aron" method="_on_area_entered"]

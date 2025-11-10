@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://r2xoh1g28bg8"]
 
-[ext_resource type="Script" uid="uid://0bpwrqgh83st" path="res://Main/EnemySpawner.gd" id="1_u2i7p"]
-[ext_resource type="Script" uid="uid://raa8qjph5xub" path="res://Main/Player.gd" id="2_hh5pf"]
-[ext_resource type="PackedScene" uid="uid://cxnmncgp30g7w" path="res://Bullet/Bullet.tscn" id="3_qg80j"]
-[ext_resource type="Texture2D" uid="uid://c2euqrjxpc4as" path="res://assets/Imagens/nave.png" id="4_bor5n"]
-[ext_resource type="AudioStream" uid="uid://mvxijlhwru1o" path="res://assets/Sons/tiro.mp3" id="5_wltqy"]
-[ext_resource type="Script" uid="uid://dme22135li0qk" path="res://Main/LevelManager.gd" id="6_kf8jr"]
+[ext_resource type="Script" uid="uid://0bpwrqgh83st" path="res://scripts/enemy_spawner.gd" id="1_u2i7p"]
+[ext_resource type="Script" uid="uid://raa8qjph5xub" path="res://player.gd" id="2_hh5pf"]
+[ext_resource type="PackedScene" uid="uid://cxnmncgp30g7w" path="res://scenes/bullet/bullet.tscn" id="3_qg80j"]
+[ext_resource type="Texture2D" uid="uid://c2euqrjxpc4as" path="res://assets/imagens/nave.png" id="4_bor5n"]
+[ext_resource type="AudioStream" uid="uid://mvxijlhwru1o" path="res://assets/audios/tiro.mp3" id="5_wltqy"]
+[ext_resource type="Script" uid="uid://dme22135li0qk" path="res://scripts/level_manager.gd" id="6_kf8jr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
 size = Vector2(43, 62)
