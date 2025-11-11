@@ -1,14 +1,19 @@
+class_name Bullet
 extends Area2D
 
 @export var speed: int = 500
+var direcao: Vector2 = Vector2.ZERO
 var screen_size: Vector2
 
 func _ready():
-	add_to_group("bullets")
 	screen_size = get_viewport_rect().size
-	position.y = screen_size.y - 80
+	add_to_group("bullets")
 
 func _process(delta):
-	position.y -= speed * delta
-	if position.y <= 0:
+	position += direcao * speed * delta
+	if position.y <= 0 or position.y >= screen_size.y:
 		queue_free()
+
+func atirar(position_init: Vector2, direcao_init: Vector2):
+	position = position_init
+	direcao = direcao_init

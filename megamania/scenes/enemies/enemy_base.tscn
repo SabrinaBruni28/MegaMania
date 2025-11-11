@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://do4w1fobj3axc"]
+[gd_scene load_steps=5 format=3 uid="uid://do4w1fobj3axc"]
 
-[ext_resource type="Script" uid="uid://b73kufm0jenq1" path="res://scripts/enemy_base.gd" id="1_ifgcn"]
+[ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/imagens/hamburguer.png" id="1_pkqou"]
+[ext_resource type="Script" uid="uid://b73kufm0jenq1" path="res://scripts/enemy_base.gd" id="1_qty17"]
+[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/audios/colisao.mp3" id="3_satqt"]
 
-[node name="EnemyBase" type="Node2D"]
-scale = Vector2(1.3, 1.3)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_satqt"]
+radius = 20.0591
+height = 70.6846
 
-[node name="Base" type="Area2D" parent="."]
-script = ExtResource("1_ifgcn")
+[node name="EnemyBase" type="Area2D" groups=["enemies"]]
+script = ExtResource("1_qty17")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pkqou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_satqt")
+
+[node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_satqt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
