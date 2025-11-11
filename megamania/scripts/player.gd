@@ -7,6 +7,8 @@ var can_shoot: bool = true
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	if Levels.posicao != Vector2.ZERO:
+		position = Levels.posicao
 
 func _process(delta):
 	if not can_shoot and get_tree().get_nodes_in_group("bullet_nave").size() == 0:
@@ -19,6 +21,7 @@ func _process(delta):
 		direction.x += 1
 
 	position += direction * speed * delta
+	Levels.posicao = position
 	if Input.is_action_pressed("atirar") and can_shoot:
 		shoot()
 	

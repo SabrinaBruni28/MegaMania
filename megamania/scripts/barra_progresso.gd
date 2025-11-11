@@ -1,10 +1,12 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var progress_bar: ProgressBar = $ProgressBar
 @onready var vida: Sprite2D = $Vida
 @onready var pontuacao: Label = $Pontuacao
+@onready var progress_bar: ProgressBar = $ProgressBar
 var tw
+var dando_pontos := false
+var pontos_por_segundo := 100
 
 func _ready() -> void:
 	inicia_vidas()
@@ -13,9 +15,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Levels.fim_de_jogo:
+		if Input.is_action_pressed("atirar"):
+			Levels.reset_jogo()
+			Levels.reinicia_jogo()
+		return
 	progress_bar.max_value = timer.wait_time
 	progress_bar.value = timer.time_left
 	atualiza_pontuacao()
+	
+	if dando_pontos:
+		Levels.soma_pontuacao(pontos_por_segundo * delta)
 
 func inicia_vidas():
 	for i in range(Levels.vidas):
@@ -48,3 +58,12 @@ func animate_fill():
 	tw = create_tween()
 	tw.tween_property(progress_bar, "value", progress_bar.max_value, 1.2)
 	tw.finished.connect(_start_timer)
+
+func animate_unfill():
+	dando_pontos = true
+	tw = create_tween()
+	tw.tween_property(progress_bar, "value", progress_bar.min_value, 1.2)
+	tw.finished.connect(_on_unfill_finished)
+
+func _on_unfill_finished():
+	dando_pontos = false

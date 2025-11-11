@@ -13,4 +13,7 @@ func _on_barra_anim_end():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if get_tree().get_nodes_in_group("enemies").size() == 0:
-		Levels.next_level()
+		get_tree().paused = true
+		barra_progresso.animate_unfill()
+		barra_progresso.tw.finished.connect(_on_barra_anim_end)
+		barra_progresso.tw.finished.connect(Levels.next_level)

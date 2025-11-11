@@ -60,6 +60,7 @@ text = "0000000"
 label_settings = SubResource("LabelSettings_l2aoc")
 
 [node name="Vida" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(348, 78)
 rotation = 1.5708
 scale = Vector2(1.2, 1.2)

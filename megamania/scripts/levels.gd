@@ -6,8 +6,19 @@ var vidas: int = 3
 var pontuacao: int = 0
 var enemies_left := 0
 var velocidade: int = 1
-signal vida
 var bullet_scene = preload("res://scenes/bullet.tscn")
+var posicao: Vector2 = Vector2.ZERO
+var fim_de_jogo: bool = false
+signal vida
+
+func reset_jogo():
+	level = 1
+	vidas = 3
+	velocidade = 1
+	pontuacao = 0
+	posicao = Vector2.ZERO
+	enemies_left = 0
+	fim_de_jogo = false
 
 func next_level():
 	level += 1
@@ -55,6 +66,7 @@ func prepare_level():
 
 func remove_vida():
 	if vidas == 0:
+		
 		termina_jogo()
 		return
 	vidas -= 1
@@ -72,4 +84,5 @@ func reinicia_jogo():
 	get_tree().reload_current_scene()
 
 func termina_jogo():
+	fim_de_jogo = true
 	get_tree().paused = true
