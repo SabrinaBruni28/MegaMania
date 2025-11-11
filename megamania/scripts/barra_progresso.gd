@@ -8,17 +8,8 @@ var tw
 
 func _ready() -> void:
 	inicia_vidas()
+	animate_fill()
 	Levels.vida.connect(adiciona_vida)
-	# Barra começa vazia
-	progress_bar.value = 0
-	progress_bar.max_value = timer.wait_time
-
-	# Tween para encher
-	tw = create_tween()
-	tw.tween_property(progress_bar, "value", progress_bar.max_value, 1.2) # 1.2s para encher
-
-	# Quando terminar → começa o timer
-	tw.finished.connect(_start_timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -54,6 +45,6 @@ func _on_timer_timeout() -> void:
 	
 func animate_fill():
 	progress_bar.value = 0
-	var tw = create_tween()
+	tw = create_tween()
 	tw.tween_property(progress_bar, "value", progress_bar.max_value, 1.2)
 	tw.finished.connect(_start_timer)

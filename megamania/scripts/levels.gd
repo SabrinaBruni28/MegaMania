@@ -2,12 +2,11 @@ extends Node
 
 var levels = ["hamburguer"]
 var level: int = 1
-var n_levels: int = 2
 var vidas: int = 3
 var pontuacao: int = 0
 var enemies_left := 0
 var velocidade: int = 1
-signal  vida
+signal vida
 var bullet_scene = preload("res://scenes/bullet.tscn")
 
 func next_level():
