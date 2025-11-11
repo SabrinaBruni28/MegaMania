@@ -1,6 +1,7 @@
 class_name  Enemy
 extends Area2D
 
+@onready var timer: Timer = $Timer
 @export var speed_y: float = 50   # velocidade de descida
 @export var speed_x: float = 50   # velocidade horizontal
 var screen_size: Vector2
@@ -26,6 +27,11 @@ func define_velocidade():
 	speed_y = 50
 	speed_x = 50  
 
+func acelerar_enemy(velocidade):
+	speed_x *= velocidade
+	speed_y *= velocidade
+	timer.wait_time /= velocidade
+
 func move_pattern(delta):
 	# função "abstrata", sobrescrita pelas subclasses
 	position.y += speed_y * delta
@@ -38,8 +44,8 @@ func shoot():
 	bullet.atirar(position - Vector2(0, -50), Vector2(0, 1))
 
 func define_timer():
-	$Timer.wait_time = randf_range(10.0, 20.0) 
-	$Timer.start()
+	timer.wait_time = randf_range(5.0, 20.0) 
+	timer.start()
 
 func morre():
 	var sfx = $CollisionSound
@@ -54,7 +60,7 @@ func morre():
 
 func _on_timer_timeout() -> void:
 	shoot()
-	$Timer.start
+	timer.start()
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bullet_nave"):

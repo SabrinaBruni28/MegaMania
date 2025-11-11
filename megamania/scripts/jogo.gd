@@ -14,4 +14,3 @@ func _on_barra_anim_end():
 func _process(delta: float) -> void:
 	if get_tree().get_nodes_in_group("enemies").size() == 0:
 		Levels.next_level()
-		get_tree().reload_current_scene()
