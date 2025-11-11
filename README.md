@@ -14,10 +14,6 @@ movimentos malucos --- desde pneus até hambúrgueres voadores!\
 Seu objetivo é **sobreviver o máximo possível**, destruindo tudo que
 aparecer.
 
-::: {align="center"}
-`<img src="https://www.atari2600.com.br/Midia/Atari/Roms/000508.gif" alt="MegaMania Gameplay" width="500"/>`{=html}
-:::
-
 ------------------------------------------------------------------------
 
 ## 🔥 Destaques
