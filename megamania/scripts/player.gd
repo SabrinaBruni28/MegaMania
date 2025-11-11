@@ -24,7 +24,7 @@ func _process(delta):
 	
 func shoot():
 	var bullet = Levels.bullet_scene.instantiate()
-	get_tree().current_scene.add_child(bullet)
+	get_parent().add_child(bullet)
 	bullet.add_to_group("bullet_nave")
 	bullet.atirar(position - Vector2(0, 50), Vector2(0, -1))
 	$ShootSound.play()
@@ -36,3 +36,4 @@ func morre():
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	area.queue_free()
 	morre()
+	Levels.remove_vida()

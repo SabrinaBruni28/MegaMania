@@ -38,12 +38,19 @@ func shoot():
 	bullet.atirar(position - Vector2(0, -50), Vector2(0, 1))
 
 func define_timer():
-	$Timer.wait_time = randf_range(5.0, 10.0) 
+	$Timer.wait_time = randf_range(10.0, 20.0) 
 	$Timer.start()
 
 func morre():
-	$CollisionSound.play()
-	queue_free()  # remove o inimigo
+	var sfx = $CollisionSound
+	sfx.get_parent().remove_child(sfx)
+	get_tree().current_scene.add_child(sfx)
+	sfx.play()
+
+	sfx.connect("finished", sfx.queue_free)
+
+	Levels.remove_enemy()
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	shoot()
@@ -51,5 +58,6 @@ func _on_timer_timeout() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bullet_nave"):
-		morre()
 		area.queue_free()
+		morre()
+		Levels.soma_pontuacao()

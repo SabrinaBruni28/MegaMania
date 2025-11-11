@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://dycm5diapwv64"]
+
+[ext_resource type="Script" uid="uid://bowc6pllu14to" path="res://scripts/barra_progresso.gd" id="1_fmdyd"]
+[ext_resource type="Texture2D" uid="uid://c2euqrjxpc4as" path="res://assets/imagens/nave.png" id="2_l2aoc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2aoc"]
+bg_color = Color(0.768627, 0.0196078, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qme3p"]
+bg_color = Color(0.870588, 0.835294, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_l2aoc"]
+font_size = 55
+font_color = Color(0.356863, 0.384314, 1, 1)
+
+[node name="BarraProgresso" type="Node2D"]
+z_index = 3
+script = ExtResource("1_fmdyd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1100.0
+offset_bottom = 120.0
+color = Color(0.606626, 0.606626, 0.606626, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 323.0
+offset_top = 20.0
+offset_right = 823.0
+offset_bottom = 43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_l2aoc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qme3p")
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="Energy" type="Label" parent="."]
+offset_left = 180.0
+offset_top = 9.0
+offset_right = 262.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "ENERGY"
+
+[node name="Pontuacao" type="Label" parent="."]
+offset_left = 786.0
+offset_top = 41.0
+offset_right = 1086.0
+offset_bottom = 117.0
+text = "0000000"
+label_settings = SubResource("LabelSettings_l2aoc")
+
+[node name="Vida" type="Sprite2D" parent="."]
+position = Vector2(348, 78)
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_l2aoc")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

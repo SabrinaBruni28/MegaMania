@@ -1,17 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://do4w1fobj3axc"]
 
 [ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/imagens/hamburguer.png" id="1_pkqou"]
-[ext_resource type="Script" uid="uid://b73kufm0jenq1" path="res://scripts/enemy_base.gd" id="1_qty17"]
+[ext_resource type="Script" uid="uid://b73kufm0jenq1" path="res://scripts/enemy/enemy_base.gd" id="1_qty17"]
 [ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/audios/colisao.mp3" id="3_satqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_satqt"]
-radius = 20.0591
-height = 70.6846
+radius = 13.0
+height = 54.0
 
 [node name="EnemyBase" type="Area2D" groups=["enemies"]]
 script = ExtResource("1_qty17")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_pkqou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

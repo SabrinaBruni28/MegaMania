@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://r2xoh1g28bg8"]
+[gd_scene load_steps=4 format=3 uid="uid://r2xoh1g28bg8"]
 
 [ext_resource type="Script" uid="uid://b208hifcufdgu" path="res://scripts/jogo.gd" id="1_sq8yp"]
 [ext_resource type="PackedScene" uid="uid://b8wq46qe7q473" path="res://scenes/player.tscn" id="2_1b3iq"]
+[ext_resource type="PackedScene" uid="uid://dycm5diapwv64" path="res://scenes/barra_progresso.tscn" id="3_1b3iq"]
 
 [node name="Jogo" type="Node2D"]
 script = ExtResource("1_sq8yp")
@@ -12,4 +13,8 @@ offset_bottom = 647.0
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_1b3iq")]
-position = Vector2(577, 618)
+position = Vector2(579, 493)
+
+[node name="BarraProgresso" parent="." instance=ExtResource("3_1b3iq")]
+process_mode = 3
+position = Vector2(27, 526)
