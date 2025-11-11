@@ -24,21 +24,34 @@ func prepare_level():
 	var spacing = Vector2(100, 50)
 	var offset = 50
 
-	var total = (cols + (cols-1)) # 23 por exemplo
+	var total = cols + (cols - 1)   # 23, no seu caso
+
 	if enemies_left == 0:
 		enemies_left = total
 
 	var count := enemies_left
 
+	# 1) Lista todas as posições possíveis
+	var posicoes: Array[Vector2] = []
+
 	for row in range(rows):
 		for col in range(cols - row):
-			if count <= 0:
-				return
-			var e = enemy.instantiate()
-			e.posicao_inicial = Vector2(row*offset - col * spacing.x, offset + row * spacing.y)
-			get_tree().current_scene.add_child(e)
-			e.acelerar_enemy(velocidade)
-			count -= 1
+			var pos = Vector2(
+				-(row * offset + col * spacing.x),
+				offset + row * spacing.y
+			)
+			posicoes.append(pos)
+
+	# 2) Embaralha
+	posicoes.shuffle()
+
+	# 3) Pega apenas as primeiras `count`
+	for i in range(min(count, posicoes.size())):
+		var e = enemy.instantiate()
+		e.posicao_inicial = posicoes[i]
+		get_tree().current_scene.add_child(e)
+		# acelera
+		e.acelerar_enemy(velocidade)
 
 func remove_vida():
 	if vidas == 0:

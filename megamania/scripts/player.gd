@@ -13,13 +13,13 @@ func _process(delta):
 		can_shoot = true
 
 	var direction = Vector2.ZERO
-	if Input.is_action_pressed("ui_left") and position.x > 50:
+	if Input.is_action_pressed("esquerda") and position.x > 50:
 		direction.x -= 1
-	if Input.is_action_pressed("ui_right") and position.x < (screen_size.x -50):
+	if Input.is_action_pressed("direita") and position.x < (screen_size.x -50):
 		direction.x += 1
 
 	position += direction * speed * delta
-	if Input.is_action_pressed("ui_accept") and can_shoot:
+	if Input.is_action_pressed("atirar") and can_shoot:
 		shoot()
 	
 func shoot():
