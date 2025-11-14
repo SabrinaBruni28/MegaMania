@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqvup7uo5b8q8"]
+
+[ext_resource type="Script" uid="uid://cab22xudvoclr" path="res://scripts/get_nome.gd" id="1_1gssn"]
+[ext_resource type="LabelSettings" uid="uid://da58mpv4dmmmx" path="res://tres/titulo.tres" id="1_8x184"]
+[ext_resource type="Theme" uid="uid://cgeeiqcn1fcru" path="res://tres/botao.tres" id="3_ylq54"]
+
+[node name="GetNome" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gssn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 86.0
+offset_right = 891.0
+offset_bottom = 196.0
+text = "Digite seu nome"
+label_settings = ExtResource("1_8x184")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 344.0
+offset_right = 878.0
+offset_bottom = 444.0
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Digite seu nome"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 508.0
+offset_right = 728.0
+offset_bottom = 608.0
+theme = ExtResource("3_ylq54")
+text = "CONFIRMAR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

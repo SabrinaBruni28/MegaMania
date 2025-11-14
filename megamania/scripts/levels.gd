@@ -1,15 +1,19 @@
 extends Node
 
+# Levels
 var levels = ["hamburguer"]
 var level: int = 1
+# Atributos do player
 var vidas: int = 3
 var pontuacao: int = 0
+var posicao: Vector2 = Vector2.ZERO
+# Atributos do jogo
 var enemies_left := 0
 var velocidade: int = 1
-var bullet_scene = preload("res://scenes/bullet.tscn")
-var posicao: Vector2 = Vector2.ZERO
-var fim_de_jogo: bool = false
+# Sinal
 signal vida
+# Bullet
+var bullet_scene = preload("res://scenes/bullet.tscn")
 
 func reset_jogo():
 	level = 1
@@ -18,7 +22,6 @@ func reset_jogo():
 	pontuacao = 0
 	posicao = Vector2.ZERO
 	enemies_left = 0
-	fim_de_jogo = false
 
 func next_level():
 	level += 1
@@ -81,8 +84,9 @@ func soma_pontuacao(pontos:int = 100):
 		emit_signal("vida")
 
 func reinicia_jogo():
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/jogo.tscn")
 
 func termina_jogo():
-	fim_de_jogo = true
-	get_tree().paused = true
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://scenes/get_nome.tscn")
+	

@@ -4,6 +4,7 @@ extends Node2D
 @onready var player: Player = $Player
 
 func _ready():
+	Save.load_game()
 	Levels.prepare_level()
 	get_tree().paused = true
 	barra_progresso.tw.finished.connect(_on_barra_anim_end)

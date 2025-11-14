@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Levels="*res://scripts/levels.gd"
+Save="*res://scripts/save.gd"
 
 [file_customization]
 

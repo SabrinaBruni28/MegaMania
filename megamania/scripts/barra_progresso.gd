@@ -15,17 +15,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Levels.fim_de_jogo:
-		if Input.is_action_pressed("atirar"):
-			Levels.reset_jogo()
-			Levels.reinicia_jogo()
-		return
 	progress_bar.max_value = timer.wait_time
 	progress_bar.value = timer.time_left
 	atualiza_pontuacao()
 	
 	if dando_pontos:
-		Levels.soma_pontuacao(pontos_por_segundo * delta)
+		Levels.soma_pontuacao(pontos_por_segundo)
 
 func inicia_vidas():
 	for i in range(Levels.vidas):
