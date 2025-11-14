@@ -30,10 +30,10 @@ label_settings = ExtResource("2_fq3dt")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 322.0
-offset_top = 235.0
-offset_right = 362.0
-offset_bottom = 275.0
+offset_left = 144.0
+offset_top = 196.0
+offset_right = 184.0
+offset_bottom = 236.0
 
 [node name="Sair" type="Button" parent="."]
 layout_mode = 0
@@ -46,9 +46,9 @@ text = "Sair"
 
 [node name="Reset" type="Button" parent="."]
 layout_mode = 0
-offset_left = 858.0
+offset_left = 832.0
 offset_top = 566.0
-offset_right = 1138.0
+offset_right = 1132.0
 offset_bottom = 625.0
 theme = ExtResource("3_5wib7")
 text = "Resetar Records"

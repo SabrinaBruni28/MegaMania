@@ -1,4 +1,7 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://82pm2ixx3cvf"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://82pm2ixx3cvf"]
+
+[ext_resource type="FontFile" uid="uid://dc0mbliuldwas" path="res://assets/fontes/JetBrainsMono-Bold.ttf" id="1_y8fo0"]
 
 [resource]
-font_size = 30
+font = ExtResource("1_y8fo0")
+font_size = 25
