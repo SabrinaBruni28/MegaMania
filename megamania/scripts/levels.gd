@@ -69,7 +69,6 @@ func prepare_level():
 
 func remove_vida():
 	if vidas == 0:
-		
 		termina_jogo()
 		return
 	vidas -= 1
@@ -84,9 +83,10 @@ func soma_pontuacao(pontos:int = 100):
 		emit_signal("vida")
 
 func reinicia_jogo():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/jogo.tscn")
 
 func termina_jogo():
-	await get_tree().create_timer(2.0).timeout
+	get_tree().paused = false 
 	get_tree().change_scene_to_file("res://scenes/get_nome.tscn")
 	

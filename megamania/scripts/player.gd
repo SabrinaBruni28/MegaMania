@@ -4,8 +4,11 @@ extends CharacterBody2D
 @export var speed: int = 300  # velocidade da nave
 var screen_size: Vector2
 var can_shoot: bool = true
+@onready var animation: AnimationPlayer = $Animation
+signal morreu
 
 func _ready() -> void:
+	animation.play("RESET")
 	screen_size = get_viewport_rect().size
 	if Levels.posicao != Vector2.ZERO:
 		position = Levels.posicao
@@ -34,9 +37,18 @@ func shoot():
 	can_shoot = false
 
 func morre():
-	queue_free()  # remove a nave
+	# Para o process normal
+	set_process(false)
+
+	# Permite processar mesmo com o jogo pausado
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	emit_signal("morreu")
+	animation.play("morre")
+
+	await animation.animation_finished
+	queue_free()
+	Levels.remove_vida()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	area.queue_free()
 	morre()
-	Levels.remove_vida()

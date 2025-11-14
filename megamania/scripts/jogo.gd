@@ -8,6 +8,7 @@ func _ready():
 	Levels.prepare_level()
 	get_tree().paused = true
 	barra_progresso.tw.finished.connect(_on_barra_anim_end)
+	player.morreu.connect(pausar)
 
 func _on_barra_anim_end():
 	get_tree().paused = false
@@ -24,3 +25,14 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		get_tree().paused = not get_tree().paused
 		barra_progresso.timer.paused = get_tree().paused
+
+func pausar():
+	# pausa geral
+	get_tree().paused = true
+	
+	# pausa o timer
+	barra_progresso.timer.paused = true
+
+	# despausar somente o Player (mas sem bagunçar a árvore!)
+	player.process_mode = Node.PROCESS_MODE_ALWAYS
+	player.animation.process_mode = Node.PROCESS_MODE_ALWAYS

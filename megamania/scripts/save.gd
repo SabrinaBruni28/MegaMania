@@ -37,7 +37,7 @@ func load_game() -> void:
 	var data: Dictionary = json
 
 	# Restaura os dados
-	lista_records = data.get("lista_records", 1)
+	lista_records = data.get("lista_records", [])
 
 	print("✅ Records carregado com sucesso!")
 
@@ -47,14 +47,10 @@ func delete_save() -> void:
 		print("⚠️ Nenhum arquivo de save encontrado para deletar.")
 		return
 
-	var dir := DirAccess.open("user://")
-	if dir.file_exists("progresso.save"):
-		dir.remove("progresso.save")
-		print("🗑️ Arquivo de save deletado com sucesso!")
-	else:
-		print("⚠️ Não foi possível encontrar o arquivo de save.")
+	DirAccess.remove_absolute(SAVE_PATH)
+	print("🗑️ Arquivo de save deletado com sucesso!")
 
 # 🔁 Reseta o progresso na memória (não apaga o arquivo)
 func reset_progresso() -> void:
-	lista_records = []
+	lista_records.clear()
 	print("🔄 Records reiniciado (memória limpa, mas arquivo mantido).")

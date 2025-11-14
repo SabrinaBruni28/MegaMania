@@ -6,7 +6,7 @@ extends Node2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 var tw
 var dando_pontos := false
-var pontos_por_segundo := 100
+var pontos_por_segundo := 10
 
 func _ready() -> void:
 	inicia_vidas()

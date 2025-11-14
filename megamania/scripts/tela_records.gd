@@ -28,5 +28,15 @@ func atualizar_ranking():
 		label.text = "%s ------------------------------- %d" % [item["nome"], item["pontos"]]
 		grid_container.add_child(label)
 
-func _on_button_pressed() -> void:
+func reset_labels():
+	# remove labels antigos
+	for child in grid_container.get_children():
+		child.queue_free()
+
+func _on_sair_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/jogo.tscn")
+
+func _on_reset_pressed() -> void:
+	Save.delete_save()
+	reset_labels()
+	atualizar_ranking()
