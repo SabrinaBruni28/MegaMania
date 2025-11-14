@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var barra_progresso: Node2D = $BarraProgresso
+@onready var player: Player = $Player
 
 func _ready():
 	Levels.prepare_level()
@@ -17,3 +18,8 @@ func _process(delta: float) -> void:
 		barra_progresso.animate_unfill()
 		barra_progresso.tw.finished.connect(_on_barra_anim_end)
 		barra_progresso.tw.finished.connect(Levels.next_level)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		get_tree().paused = not get_tree().paused
+		barra_progresso.timer.paused = get_tree().paused

@@ -9,6 +9,7 @@ radius = 13.0
 height = 54.0
 
 [node name="EnemyBase" type="Area2D" groups=["enemies"]]
+process_mode = 1
 script = ExtResource("1_qty17")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

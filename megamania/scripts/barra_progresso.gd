@@ -61,8 +61,15 @@ func animate_fill():
 
 func animate_unfill():
 	dando_pontos = true
+
+	var valor_atual := progress_bar.value
+	var valor_max := progress_bar.max_value
+
+	var tempo_total := 4.5  # tempo total para esvaziar de 100% até 0%
+	var duracao := tempo_total * (valor_atual / valor_max)
+
 	tw = create_tween()
-	tw.tween_property(progress_bar, "value", progress_bar.min_value, 1.2)
+	tw.tween_property(progress_bar, "value", -5, duracao)
 	tw.finished.connect(_on_unfill_finished)
 
 func _on_unfill_finished():
