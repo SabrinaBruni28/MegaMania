@@ -1,7 +1,11 @@
 extends Node
 
 # Levels
-var levels = ["hamburguer", "cookie"]
+var levels = [
+				"hamburguer",
+				"cookie",
+				"bug"
+			]
 var level: int = 1
 # Atributos do player
 var vidas: int = 3
@@ -34,7 +38,7 @@ func prepare_level():
 	var enemy = load("res://scenes/enemies/" + levels[level -1] + ".tscn")
 
 	# 1) Lista todas as posições possíveis
-	var posicoes = Spawer.call(levels[level - 1])
+	var posicoes = Spawner.call(levels[level - 1])
 	var count := enemies_left
 
 	# 2) Embaralha

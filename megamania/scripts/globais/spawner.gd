@@ -61,3 +61,6 @@ func cookie():
 			posicoes.append(pos)
 			
 	return posicoes
+
+func bug():
+	return hamburguer()

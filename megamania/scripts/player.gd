@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-@export var speed: int = 300  # velocidade da nave
+@export var speed: int = 400  # velocidade da nave
 var screen_size: Vector2
 var can_shoot: bool = true
 @onready var animation: AnimationPlayer = $Animation
@@ -32,6 +32,7 @@ func shoot():
 	var bullet = Levels.bullet_scene.instantiate()
 	get_parent().add_child(bullet)
 	bullet.add_to_group("bullet_nave")
+	bullet.speed = 600
 	bullet.atirar(position - Vector2(0, 50), Vector2(0, -1))
 	$ShootSound.play()
 	can_shoot = false

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://f2dqpk6p7q00"]
 
-[ext_resource type="Script" uid="uid://drikh7rxjrbr7" path="res://scripts/tela_records.gd" id="1_wn400"]
+[ext_resource type="Script" uid="uid://cn8wxs3wfor7x" path="res://scripts/telas/tela_records.gd" id="1_wn400"]
 [ext_resource type="LabelSettings" uid="uid://da58mpv4dmmmx" path="res://tres/titulo.tres" id="2_fq3dt"]
 [ext_resource type="Theme" uid="uid://cgeeiqcn1fcru" path="res://tres/botao.tres" id="3_5wib7"]
 

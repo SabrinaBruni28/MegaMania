@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Levels="*res://scripts/globais/levels.gd"
 Save="*res://scripts/globais/save.gd"
-Spawer="*res://scripts/globais/spawer.gd"
+Spawner="*res://scripts/globais/spawner.gd"
 
 [file_customization]
 
