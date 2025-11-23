@@ -69,5 +69,5 @@ func reinicia_jogo():
 
 func termina_jogo():
 	get_tree().paused = false 
-	get_tree().change_scene_to_file("res://scenes/get_nome.tscn")
+	get_tree().change_scene_to_file("res://scenes/telas/tela_get_nome.tscn")
 	

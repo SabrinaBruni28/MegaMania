@@ -45,7 +45,6 @@ func _on_timer_timeout() -> void:
 	var nodes = get_tree().get_nodes_in_group("nave")
 	for n in nodes:
 		n.morre()
-	Levels.remove_vida()
 	
 func animate_fill():
 	progress_bar.value = 0

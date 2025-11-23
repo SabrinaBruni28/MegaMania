@@ -50,5 +50,5 @@ func morre():
 	Levels.remove_vida()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	area.queue_free()
 	morre()
+	area.queue_free()
