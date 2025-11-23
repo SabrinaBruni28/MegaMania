@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://do4w1fobj3axc"]
 
-[ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/imagens/hamburguer.png" id="1_pkqou"]
-[ext_resource type="Script" uid="uid://b73kufm0jenq1" path="res://scripts/enemy/enemy_base.gd" id="1_qty17"]
-[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/audios/colisao.mp3" id="3_satqt"]
+[ext_resource type="Texture2D" uid="uid://dvtveho4qtmwr" path="res://assets/imagens/hamburguer.png" id="1_pkqou"]
+[ext_resource type="Script" uid="uid://d2ra8b1yone61" path="res://scripts/enemy/enemy_base.gd" id="1_qty17"]
+[ext_resource type="AudioStream" uid="uid://f1i0288aljok" path="res://assets/audios/colisao.mp3" id="3_satqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_satqt"]
 radius = 13.0

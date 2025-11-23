@@ -17,7 +17,7 @@ func _process(delta):
 	move_pattern(delta)  # cada inimigo define sua lógica de movimento
 
 	# Se sair da tela por baixo → reaparecer no topo
-	if position.y > screen_size.y + 50:
+	if position.y > screen_size.y:
 		position.y = -50
 	# Se sair da tela pelo lado → reaparecer do outro
 	if position.x > screen_size.x + 50:

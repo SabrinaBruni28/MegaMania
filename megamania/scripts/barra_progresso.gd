@@ -13,7 +13,6 @@ func _ready() -> void:
 	animate_fill()
 	Levels.vida.connect(adiciona_vida)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	progress_bar.max_value = timer.wait_time
 	progress_bar.value = timer.time_left
@@ -62,6 +61,7 @@ func animate_unfill():
 
 	var tempo_total := 4.5  # tempo total para esvaziar de 100% até 0%
 	var duracao := tempo_total * (valor_atual / valor_max)
+	get_tree().paused = true
 
 	tw = create_tween()
 	tw.tween_property(progress_bar, "value", -5, duracao)

@@ -1,7 +1,7 @@
 extends Node
 
 # Levels
-var levels = ["hamburguer"]
+var levels = ["hamburguer", "cookie"]
 var level: int = 1
 # Atributos do player
 var vidas: int = 3
@@ -33,28 +33,9 @@ func next_level():
 func prepare_level():
 	var enemy = load("res://scenes/enemies/" + levels[level -1] + ".tscn")
 
-	var cols = 12
-	var rows = 2
-	var spacing = Vector2(100, 50)
-	var offset = 50
-
-	var total = cols + (cols - 1)   # 23, no seu caso
-
-	if enemies_left == 0:
-		enemies_left = total
-
-	var count := enemies_left
-
 	# 1) Lista todas as posições possíveis
-	var posicoes: Array[Vector2] = []
-
-	for row in range(rows):
-		for col in range(cols - row):
-			var pos = Vector2(
-				-(row * offset + col * spacing.x),
-				offset + row * spacing.y
-			)
-			posicoes.append(pos)
+	var posicoes = Spawer.call(levels[level - 1])
+	var count := enemies_left
 
 	# 2) Embaralha
 	posicoes.shuffle()
