@@ -59,8 +59,13 @@ func cookie():
 					offset + row * spacing.y
 				)
 			posicoes.append(pos)
+		if row % 2 == 1:
+			#speed_x *= -1
 			
 	return posicoes
 
 func bug():
 	return hamburguer()
+
+func radial_tire():
+	return cookie()

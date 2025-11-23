@@ -4,7 +4,8 @@ extends Node
 var levels = [
 				"hamburguer",
 				"cookie",
-				"bug"
+				"bug",
+				"radial_tire"
 			]
 var level: int = 1
 # Atributos do player
@@ -42,7 +43,7 @@ func prepare_level():
 	var count := enemies_left
 
 	# 2) Embaralha
-	posicoes.shuffle()
+	#posicoes.shuffle()
 
 	# 3) Pega apenas as primeiras `count`
 	for i in range(min(count, posicoes.size())):
