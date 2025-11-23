@@ -36,22 +36,20 @@ func next_level():
 	reinicia_jogo()
 
 func prepare_level():
-	var enemy = load("res://scenes/enemies/" + levels[level -1] + ".tscn")
-
-	# 1) Lista todas as posições possíveis
-	var posicoes = Spawner.call(levels[level - 1])
+	var enemy = load("res://scenes/enemies/" + levels[level - 1] + ".tscn")
+	
+	# 1) Lista todas os inimigos
+	var inimigos = Spawner.call(levels[level - 1], enemy)
 	var count := enemies_left
 
-	# 2) Embaralha
-	#posicoes.shuffle()
+	# 2) Embaralha os inimigos
+	inimigos.shuffle()
 
 	# 3) Pega apenas as primeiras `count`
-	for i in range(min(count, posicoes.size())):
-		var e = enemy.instantiate()
-		e.posicao_inicial = posicoes[i]
-		get_tree().current_scene.add_child(e)
+	for i in range(min(count, inimigos.size())):
+		get_tree().current_scene.add_child(inimigos[i])
 		# acelera
-		e.acelerar_enemy(velocidade)
+		inimigos[i].acelerar_enemy(velocidade)
 
 func remove_vida():
 	if vidas == 0:

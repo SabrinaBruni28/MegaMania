@@ -1,6 +1,6 @@
 extends Node
 
-func hamburguer():
+func hamburguer(enemy: Resource):
 	var cols = 9
 	var rows = 3
 	var spacing = Vector2(140, 50)
@@ -12,32 +12,38 @@ func hamburguer():
 		Levels.enemies_left = total
 
 	# 1) Lista todas as posições possíveis
-	var posicoes: Array[Vector2] = []
+	var inimigos: Array = []
 
 	for col in range(cols):
 		var pos = Vector2(
 			-(col * spacing.x),
 			offset
 		)
-		posicoes.append(pos)
+		var e = enemy.instantiate()
+		e.posicao_inicial = pos
+		inimigos.append(e)
 	
 	for col in range(cols):
 		var pos = Vector2(
 			-(offset + col * spacing.x),
 			offset + spacing.y
 		)
-		posicoes.append(pos)
+		var e = enemy.instantiate()
+		e.posicao_inicial = pos
+		inimigos.append(e)
 	
 	for col in range(cols):
 		var pos = Vector2(
 			-(col * spacing.x),
 			offset + 2 * spacing.y
 		)
-		posicoes.append(pos)
+		var e = enemy.instantiate()
+		e.posicao_inicial = pos
+		inimigos.append(e)
 			
-	return posicoes
+	return inimigos
 
-func cookie():
+func cookie(enemy: Resource):
 	var cols = 3
 	var rows = 6
 	var spacing = Vector2(200, -100)
@@ -49,7 +55,7 @@ func cookie():
 		Levels.enemies_left = total
 
 	# 1) Lista todas as posições possíveis
-	var posicoes: Array[Vector2] = []
+	var inimigos: Array = []
 	var deslocamento = 1
 	for row in range(rows):
 		deslocamento *= -1
@@ -58,14 +64,14 @@ func cookie():
 					deslocamento * (offset + col * spacing.x),
 					offset + row * spacing.y
 				)
-			posicoes.append(pos)
-		if row % 2 == 1:
-			#speed_x *= -1
+			var e = enemy.instantiate()
+			e.posicao_inicial = pos
+			inimigos.append(e)
 			
-	return posicoes
+	return inimigos
 
-func bug():
-	return hamburguer()
+func bug(enemy: Resource):
+	return hamburguer(enemy)
 
-func radial_tire():
-	return cookie()
+func radial_tire(enemy: Resource):
+	return cookie(enemy)
