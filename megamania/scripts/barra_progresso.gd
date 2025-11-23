@@ -49,6 +49,7 @@ func _on_timer_timeout() -> void:
 	
 func animate_fill():
 	progress_bar.value = 0
+	get_tree().paused = true
 	tw = create_tween()
 	tw.tween_property(progress_bar, "value", progress_bar.max_value, 1.2)
 	tw.finished.connect(_start_timer)

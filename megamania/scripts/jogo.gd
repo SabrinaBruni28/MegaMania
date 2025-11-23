@@ -6,7 +6,6 @@ extends Node2D
 func _ready():
 	Save.load_game()
 	Levels.prepare_level()
-	get_tree().paused = true
 	barra_progresso.tw.finished.connect(_on_barra_anim_end)
 	player.morreu.connect(pausar)
 
@@ -15,7 +14,6 @@ func _on_barra_anim_end():
 
 func _process(delta: float) -> void:
 	if get_tree().get_nodes_in_group("enemies").size() == 0:
-		get_tree().paused = true
 		barra_progresso.animate_unfill()
 		barra_progresso.tw.finished.connect(_on_barra_anim_end)
 		barra_progresso.tw.finished.connect(Levels.next_level)

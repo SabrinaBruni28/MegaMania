@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Levels="*res://scripts/levels.gd"
-Save="*res://scripts/save.gd"
-Spawer="*res://scripts/spawer.gd"
+Levels="*res://scripts/globais/levels.gd"
+Save="*res://scripts/globais/save.gd"
+Spawer="*res://scripts/globais/spawer.gd"
 
 [file_customization]
 

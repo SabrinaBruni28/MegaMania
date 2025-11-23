@@ -20,7 +20,7 @@ func move_pattern(delta):
 	position.x += speed_x * delta
 	count += 1
 	descida -=1
-	if count == 150:
+	if count == 200:
 		descida = 10
 		speed_x *= -1
 		count = 0
@@ -29,5 +29,5 @@ func move_pattern(delta):
 
 func define_velocidade():
 	posicao_inicial += Vector2(500, -115)
-	speed_x = 300  
+	speed_x = 400  
 	speed_y = 300
