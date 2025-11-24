@@ -52,4 +52,3 @@ func morre():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	morre()
-	area.queue_free()
