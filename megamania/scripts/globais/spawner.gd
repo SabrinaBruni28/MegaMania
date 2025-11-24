@@ -101,3 +101,5 @@ func radial_tire(enemy: Resource):
 			
 	return inimigos
  
+func space_dice(enemy: Resource):
+	return cookie(enemy)
