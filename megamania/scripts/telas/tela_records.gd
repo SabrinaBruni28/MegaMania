@@ -1,6 +1,11 @@
 extends Control
 
 @onready var grid_container: GridContainer = $GridContainer
+@onready var click: AudioStreamPlayer2D = $Click
+@onready var hover: AudioStreamPlayer2D = $Hover
+@onready var sair: Button = $Sair
+@onready var reset: Button = $Reset
+@onready var jogar_novamente: Button = $"JogarNovamente"
 
 func _ready():
 	Save.load_game()
@@ -36,17 +41,6 @@ func reset_labels():
 	for child in grid_container.get_children():
 		child.queue_free()
 
-func _on_sair_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/telas/tela_inicial.tscn")
-
-func _on_jogar_novamente_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/jogo.tscn")
-
-func _on_reset_pressed() -> void:
-	Save.delete_save()
-	reset_labels()
-	atualizar_ranking()
-
 func _pad_right(text: String, total: int) -> String:
 	# retorna text cortado se maior que total, ou preenchido com espaços à direita
 	if text.length() >= total:
@@ -64,3 +58,32 @@ func _pad_left_zeros(value: int, total: int) -> String:
 	while s.length() < total:
 		s = "0" + s
 	return s
+
+func _on_sair_pressed() -> void:
+	click.play()
+	sair.disabled = true
+	await click.finished
+	get_tree().change_scene_to_file("res://scenes/telas/tela_inicial.tscn")
+
+func _on_jogar_novamente_pressed() -> void:
+	click.play()
+	jogar_novamente.disabled = true
+	await click.finished
+	get_tree().change_scene_to_file("res://scenes/jogo.tscn")
+
+func _on_reset_pressed() -> void:
+	click.play()
+	reset.disabled = true
+	await click.finished
+	Save.delete_save()
+	reset_labels()
+	atualizar_ranking()
+
+func _on_sair_mouse_entered() -> void:
+	hover.play()
+
+func _on_reset_mouse_entered() -> void:
+	hover.play()
+
+func _on_jogar_novamente_mouse_entered() -> void:
+	hover.play()

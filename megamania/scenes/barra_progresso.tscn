@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dycm5diapwv64"]
 
-[ext_resource type="Script" uid="uid://bqla6rjiv3ds6" path="res://scripts/barra_progresso.gd" id="1_fmdyd"]
-[ext_resource type="Texture2D" uid="uid://nbn33ex63cpv" path="res://assets/imagens/nave.png" id="2_l2aoc"]
+[ext_resource type="Script" uid="uid://bowc6pllu14to" path="res://scripts/barra_progresso.gd" id="1_fmdyd"]
+[ext_resource type="Texture2D" uid="uid://c2euqrjxpc4as" path="res://assets/imagens/nave.png" id="2_l2aoc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2aoc"]
 bg_color = Color(0.768627, 0.0196078, 0, 1)

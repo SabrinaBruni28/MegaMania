@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8wq46qe7q473"]
 
-[ext_resource type="Script" uid="uid://on4njf6cdi51" path="res://scripts/player.gd" id="1_dqkch"]
-[ext_resource type="Texture2D" uid="uid://nbn33ex63cpv" path="res://assets/imagens/nave.png" id="3_tuyoq"]
-[ext_resource type="AudioStream" uid="uid://bfshhvechemoi" path="res://assets/audios/tiro.mp3" id="4_fjrip"]
+[ext_resource type="Script" uid="uid://raa8qjph5xub" path="res://scripts/player.gd" id="1_dqkch"]
+[ext_resource type="Texture2D" uid="uid://c2euqrjxpc4as" path="res://assets/imagens/nave.png" id="3_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://mvxijlhwru1o" path="res://assets/audios/tiro.mp3" id="4_fjrip"]
 
 [sub_resource type="Animation" id="Animation_dqkch"]
 length = 0.001
@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(-0.0333333, 0.222222, 0.666667, 0.977778),
 "transitions": PackedFloat32Array(5, 1, 1, 5),
 "update": 0,
-"values": [Color(0.44705883, 0.44705883, 0.44705883, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.442911, 0.442911, 0.442911, 1)]
+"values": [Color(0.447059, 0.447059, 0.447059, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.442911, 0.442911, 0.442911, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false

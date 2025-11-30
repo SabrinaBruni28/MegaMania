@@ -1,13 +1,17 @@
 extends Control
 
-@onready var text_edit: TextEdit = $TextEdit
 var texto: String
+@onready var text_edit: TextEdit = $TextEdit
+@onready var click: AudioStreamPlayer2D = $Click
+@onready var hover: AudioStreamPlayer2D = $Hover
+@onready var button: Button = $Button
 
 func _process(delta: float) -> void:
 	texto = text_edit.text
-	print(texto)
 
 func _on_button_pressed() -> void:
+	click.play()
+	button.disabled = true
 	var nome_limpo := texto.strip_edges().substr(0, 10)
 
 	var encontrado := false
@@ -35,4 +39,8 @@ func _on_button_pressed() -> void:
 	# 4. Salva e troca de cena
 	Save.save_game()
 	Levels.reset_jogo()
+	await click.finished
 	get_tree().change_scene_to_file("res://scenes/telas/tela_records.tscn")
+
+func _on_button_mouse_entered() -> void:
+	hover.play()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2cfmyb8y86ue"]
 
 [ext_resource type="PackedScene" uid="uid://do4w1fobj3axc" path="res://scenes/enemies/enemy_base.tscn" id="1_xukjv"]
-[ext_resource type="Script" uid="uid://ddoc8xodyogk0" path="res://scripts/enemy/hamburguer.gd" id="2_a8fvk"]
+[ext_resource type="Script" uid="uid://5p0x8n4wve71" path="res://scripts/enemy/hamburguer.gd" id="2_a8fvk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7auc0"]
 radius = 14.0
