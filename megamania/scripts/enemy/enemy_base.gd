@@ -42,7 +42,7 @@ func shoot():
 	get_tree().current_scene.add_child(bullet)
 	bullet.add_to_group("bullet_enemy")
 	bullet.atirar(position - Vector2(0, -50), Vector2(0, 1))
-	bullet.set_cor(Color.INDIGO)
+	bullet.set_cor(Color.DARK_BLUE)
 
 func define_timer():
 	timer.wait_time = randf_range(5.0, 20.0) 
