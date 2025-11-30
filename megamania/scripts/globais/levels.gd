@@ -2,14 +2,14 @@ extends Node
 
 # Levels
 var levels = [
-				"hamburguer",
-				"cookie",
-				"bug",
-				"radial_tire",
+				#"hamburguer",
+				#"cookie",
+				#"bug",
+				#"radial_tire",
 				#"diamond",
-				#"steam_iron",
+				"steam_iron",
 				#"bow_tie",
-				"space_dice"
+				#"space_dice"
 			]
 var level: int = 1
 # Atributos do player

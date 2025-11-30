@@ -100,6 +100,32 @@ func radial_tire(enemy: Resource):
 			inimigos.append(e)
 			
 	return inimigos
+	
+func steam_iron(enemy: Resource):
+	var cols = 3
+	var rows = 9
+	var spacing = Vector2(140, 50)
+	var offset = 70
+	
+	var total = cols * rows
+	
+	if Levels.enemies_left == 0:
+		Levels.enemies_left = total
+
+	# 1) Lista todas as posições possíveis
+	var inimigos: Array = []
+
+	for row in range(rows):
+		for col in range(cols):
+			var pos = Vector2(
+				-(col * spacing.x),
+				offset + row * spacing.y
+			)
+			var e = enemy.instantiate()
+			e.posicao_inicial = pos
+			inimigos.append(e)
+	
+	return inimigos
  
 func space_dice(enemy: Resource):
 	return cookie(enemy)
