@@ -127,5 +127,11 @@ func steam_iron(enemy: Resource):
 	
 	return inimigos
  
+func diamond(enemy: Resource):
+	return hamburguer(enemy)
+
+func bow_tie(enemy: Resource):
+	return hamburguer(enemy)
+
 func space_dice(enemy: Resource):
 	return cookie(enemy)

@@ -30,6 +30,6 @@ func move_pattern(delta):
 		speed_x *= -1
 
 func define_velocidade():
-	posicao_inicial += Vector2(500, -115)
+	posicao_inicial += Vector2(500, -112)
 	speed_x = 400  
 	speed_y = 300
