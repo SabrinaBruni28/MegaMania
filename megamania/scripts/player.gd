@@ -34,6 +34,7 @@ func shoot():
 	bullet.add_to_group("bullet_nave")
 	bullet.speed = 600
 	bullet.atirar(position - Vector2(0, 50), Vector2(0, -1))
+	bullet.set_cor(Color.BROWN)
 	$ShootSound.play()
 	can_shoot = false
 

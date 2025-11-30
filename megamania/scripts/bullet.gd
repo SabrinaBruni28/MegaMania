@@ -17,3 +17,6 @@ func _process(delta):
 func atirar(position_init: Vector2, direcao_init: Vector2):
 	position = position_init
 	direcao = direcao_init
+
+func set_cor(cor: Color):
+	modulate = cor
