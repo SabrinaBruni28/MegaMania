@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqvup7uo5b8q8"]
 
-[ext_resource type="Script" uid="uid://cab22xudvoclr" path="res://scripts/get_nome.gd" id="1_1gssn"]
+[ext_resource type="Script" uid="uid://bvwl0s01c1u1h" path="res://scripts/telas/tela_get_nome.gd" id="1_1gssn"]
 [ext_resource type="LabelSettings" uid="uid://da58mpv4dmmmx" path="res://tres/titulo.tres" id="1_8x184"]
 [ext_resource type="Theme" uid="uid://cgeeiqcn1fcru" path="res://tres/botao.tres" id="3_ylq54"]
 
@@ -15,7 +15,8 @@ script = ExtResource("1_1gssn")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1150.0
+offset_left = -1.0
+offset_right = 1149.0
 offset_bottom = 647.0
 color = Color(0, 0, 0, 1)
 

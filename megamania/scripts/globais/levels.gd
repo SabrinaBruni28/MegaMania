@@ -1,7 +1,16 @@
 extends Node
 
 # Levels
-var levels = ["hamburguer"]
+var levels = [
+				"hamburguer",
+				"cookie",
+				"bug",
+				"radial_tire",
+				"diamond",
+				"steam_iron",
+				"bow_tie",
+				"space_dice"
+			]
 var level: int = 1
 # Atributos do player
 var vidas: int = 3
@@ -31,41 +40,20 @@ func next_level():
 	reinicia_jogo()
 
 func prepare_level():
-	var enemy = load("res://scenes/enemies/" + levels[level -1] + ".tscn")
-
-	var cols = 12
-	var rows = 2
-	var spacing = Vector2(100, 50)
-	var offset = 50
-
-	var total = cols + (cols - 1)   # 23, no seu caso
-
-	if enemies_left == 0:
-		enemies_left = total
-
+	var enemy = load("res://scenes/enemies/" + levels[level - 1] + ".tscn")
+	
+	# 1) Lista todas os inimigos
+	var inimigos = Spawner.call(levels[level - 1], enemy)
 	var count := enemies_left
 
-	# 1) Lista todas as posições possíveis
-	var posicoes: Array[Vector2] = []
-
-	for row in range(rows):
-		for col in range(cols - row):
-			var pos = Vector2(
-				-(row * offset + col * spacing.x),
-				offset + row * spacing.y
-			)
-			posicoes.append(pos)
-
-	# 2) Embaralha
-	posicoes.shuffle()
+	# 2) Embaralha os inimigos
+	inimigos.shuffle()
 
 	# 3) Pega apenas as primeiras `count`
-	for i in range(min(count, posicoes.size())):
-		var e = enemy.instantiate()
-		e.posicao_inicial = posicoes[i]
-		get_tree().current_scene.add_child(e)
+	for i in range(min(count, inimigos.size())):
+		get_tree().current_scene.add_child(inimigos[i])
 		# acelera
-		e.acelerar_enemy(velocidade)
+		inimigos[i].acelerar_enemy(velocidade)
 
 func remove_vida():
 	if vidas == 0:
@@ -88,5 +76,5 @@ func reinicia_jogo():
 
 func termina_jogo():
 	get_tree().paused = false 
-	get_tree().change_scene_to_file("res://scenes/get_nome.tscn")
+	get_tree().change_scene_to_file("res://scenes/telas/tela_get_nome.tscn")
 	

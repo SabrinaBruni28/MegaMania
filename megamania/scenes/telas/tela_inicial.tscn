@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=4 uid="uid://ct08u8twt760p"]
+
+[ext_resource type="LabelSettings" uid="uid://da58mpv4dmmmx" path="res://tres/titulo.tres" id="1_7exdg"]
+[ext_resource type="Script" uid="uid://c6ya40p6w174e" path="res://scripts/telas/tela_inicial.gd" id="1_qu5xs"]
+[ext_resource type="Theme" uid="uid://cgeeiqcn1fcru" path="res://tres/botao.tres" id="2_qu5xs"]
+[ext_resource type="PackedScene" uid="uid://b2cfmyb8y86ue" path="res://scenes/enemies/hamburguer.tscn" id="4_l684f"]
+[ext_resource type="PackedScene" uid="uid://dpomglw66kg62" path="res://scenes/enemies/cookie.tscn" id="5_q88pn"]
+[ext_resource type="PackedScene" uid="uid://q6l5wqcadad5" path="res://scenes/enemies/bow_tie.tscn" id="5_wdnvy"]
+[ext_resource type="PackedScene" uid="uid://dr8xwkjsoruyt" path="res://scenes/enemies/bug.tscn" id="6_jnt1f"]
+[ext_resource type="PackedScene" uid="uid://birqxjm7bpupy" path="res://scenes/enemies/diamond.tscn" id="6_mg1ua"]
+[ext_resource type="PackedScene" uid="uid://e82nxi2j05vr" path="res://scenes/enemies/radial_tire.tscn" id="7_0qnyv"]
+[ext_resource type="PackedScene" uid="uid://boyfac4uhlwm1" path="res://scenes/enemies/space_dice.tscn" id="8_o4tnp"]
+[ext_resource type="PackedScene" uid="uid://d3iattc244wbg" path="res://scenes/enemies/steam_iron.tscn" id="9_sluqr"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yycln"]
+scenes/1/scene = ExtResource("4_l684f")
+scenes/2/scene = ExtResource("5_q88pn")
+scenes/3/scene = ExtResource("6_jnt1f")
+scenes/4/scene = ExtResource("5_wdnvy")
+scenes/6/scene = ExtResource("6_mg1ua")
+scenes/7/scene = ExtResource("7_0qnyv")
+scenes/8/scene = ExtResource("8_o4tnp")
+scenes/9/scene = ExtResource("9_sluqr")
+
+[sub_resource type="TileSet" id="TileSet_jnt1f"]
+sources/7 = SubResource("TileSetScenesCollectionSource_yycln")
+
+[sub_resource type="TileSet" id="TileSet_yycln"]
+
+[node name="TelaInicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qu5xs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAALABAABwAAAAAAAQAHAAMABwAAAAAAAgA9AAQABwAAAAAABwAUAAMABwAAAAAACQA3ABMABwAAAAAAAwAxABkABwAAAAAABgAyAAMABwAAAAAACAAFABYABwAAAAAABAA=")
+tile_set = SubResource("TileSet_jnt1f")
+
+[node name="TileMap" type="TileMap" parent="TileMapLayer"]
+tile_set = SubResource("TileSet_yycln")
+format = 2
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 65.0
+offset_right = 851.0
+offset_bottom = 202.0
+text = "MegaMania"
+label_settings = ExtResource("1_7exdg")
+
+[node name="Jogar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 432.00003
+offset_top = 382.0
+offset_right = 632.0
+offset_bottom = 441.0
+scale = Vector2(1.2, 1.2)
+theme = ExtResource("2_qu5xs")
+text = "Jogar"
+
+[node name="Records" type="Button" parent="."]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 502.0
+offset_right = 629.0
+offset_bottom = 561.0
+scale = Vector2(1.2, 1.2)
+theme = ExtResource("2_qu5xs")
+text = "Records"
+
+[connection signal="area_entered" from="TileMapLayer/Hamburguer" to="TileMapLayer/Hamburguer" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Cookie" to="TileMapLayer/Cookie" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Radial Tire" to="TileMapLayer/Radial Tire" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Steam Iron" to="TileMapLayer/Steam Iron" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Bug" to="TileMapLayer/Bug" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Diamond" to="TileMapLayer/Diamond" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Space Dice" to="TileMapLayer/Space Dice" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/BowTie" to="TileMapLayer/BowTie" method="_on_area_entered"]
+[connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Records" to="." method="_on_records_pressed"]

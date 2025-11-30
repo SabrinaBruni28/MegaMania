@@ -35,4 +35,4 @@ func _on_button_pressed() -> void:
 	# 4. Salva e troca de cena
 	Save.save_game()
 	Levels.reset_jogo()
-	get_tree().change_scene_to_file("res://scenes/tela_records.tscn")
+	get_tree().change_scene_to_file("res://scenes/telas/tela_records.tscn")

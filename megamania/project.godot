@@ -11,14 +11,20 @@ config_version=5
 [application]
 
 config/name="MegaMania"
-run/main_scene="uid://r2xoh1g28bg8"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+run/main_scene="uid://ct08u8twt760p"
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Levels="*res://scripts/levels.gd"
-Save="*res://scripts/save.gd"
+Levels="*res://scripts/globais/levels.gd"
+Save="*res://scripts/globais/save.gd"
+Spawner="*res://scripts/globais/spawner.gd"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [file_customization]
 

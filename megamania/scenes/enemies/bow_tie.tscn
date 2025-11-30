@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://q6l5wqcadad5"]
+
+[ext_resource type="PackedScene" uid="uid://do4w1fobj3axc" path="res://scenes/enemies/enemy_base.tscn" id="1_pajhh"]
+[ext_resource type="Script" uid="uid://den33cac6nplr" path="res://scripts/enemy/bow_tie.gd" id="2_7cs3c"]
+[ext_resource type="Texture2D" uid="uid://cb22tff584eqe" path="res://assets/imagens/bow_tie.png" id="2_p4sye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4sye"]
+size = Vector2(26.2, 45.500004)
+
+[node name="BowTie" instance=ExtResource("1_pajhh")]
+script = ExtResource("2_7cs3c")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_p4sye")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.7499989, -0.4999973)
+shape = SubResource("RectangleShape2D_p4sye")
