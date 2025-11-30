@@ -103,8 +103,8 @@ func radial_tire(enemy: Resource):
 	
 func steam_iron(enemy: Resource):
 	var cols = 3
-	var rows = 9
-	var spacing = Vector2(140, 50)
+	var rows = 7
+	var spacing = Vector2(220, 100)
 	var offset = 70
 	
 	var total = cols * rows

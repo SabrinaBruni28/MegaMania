@@ -21,6 +21,11 @@ Levels="*res://scripts/globais/levels.gd"
 Save="*res://scripts/globais/save.gd"
 Spawner="*res://scripts/globais/spawner.gd"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={

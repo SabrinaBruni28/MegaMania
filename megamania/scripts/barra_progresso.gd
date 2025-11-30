@@ -42,6 +42,7 @@ func adiciona_vida():
 	add_child(a)
 
 func _on_timer_timeout() -> void:
+	set_process(false)
 	var nodes = get_tree().get_nodes_in_group("nave")
 	for n in nodes:
 		n.morre()
