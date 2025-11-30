@@ -1,16 +1,19 @@
+@tool
 class_name  Enemy
 extends Area2D
 
 @onready var timer: Timer = $Timer
-@export var speed_y: float = 50   # velocidade de descida
-@export var speed_x: float = 50   # velocidade horizontal
+@export var speed_y: float = 200   # velocidade de descida
+@export var speed_x: float = 400   # velocidade horizontal
 var screen_size: Vector2
 var posicao_inicial: Vector2 = Vector2.ZERO
 
 func _ready():
+	screen_size = get_viewport_rect().size
+	if posicao_inicial == Vector2.ZERO: return
+		
 	define_timer()
 	define_velocidade()
-	screen_size = get_viewport_rect().size
 	position = posicao_inicial
 
 func _process(delta):

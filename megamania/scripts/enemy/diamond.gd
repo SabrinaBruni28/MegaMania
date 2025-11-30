@@ -13,3 +13,7 @@ func define_velocidade():
 	posicao_inicial += Vector2(-50, 0)
 	speed_x = 450
 	speed_y = 300
+	
+func define_timer():
+	timer.wait_time = randf_range(2.0, 15.0) 
+	timer.start()
