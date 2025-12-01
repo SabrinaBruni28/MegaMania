@@ -2,24 +2,25 @@ extends Node
 
 # Levels
 var levels = [
-				"hamburguer",
-				"cookie",
-				"bug",
-				"radial_tire",
-				"diamond",
-				"steam_iron",
-				"bow_tie",
-				"space_dice"
-			]
+	"hamburguer",
+	"cookie",
+	"bug",
+	"radial_tire",
+	"diamond",
+	"steam_iron",
+	"bow_tie",
+	"space_dice"
+]
 var level: int = 1
 # Atributos do player
 var vidas: int = 3
 var pontuacao: int = 0
 var posicao: Vector2 = Vector2.ZERO
 # Atributos do jogo
-var enemies_left := 0
+var enemies_left: int = 0
 var velocidade: int = 1
 # Sinal
+var proxima_vida: int = 10000
 signal vida
 # Bullet
 var bullet_scene = preload("res://scenes/bullet.tscn")
@@ -67,7 +68,8 @@ func remove_enemy():
 
 func soma_pontuacao(pontos:int = 100):
 	pontuacao += pontos
-	if pontuacao % 10000 == 0:
+	if pontuacao >= proxima_vida:
+		proxima_vida += 10000
 		emit_signal("vida")
 
 func reinicia_jogo():

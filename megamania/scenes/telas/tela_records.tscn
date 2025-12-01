@@ -23,19 +23,20 @@ color = Color(0, 0, 0, 1)
 
 [node name="Titulo" type="Label" parent="."]
 layout_mode = 0
-offset_left = 382.0
-offset_top = 22.0
-offset_right = 836.0
-offset_bottom = 159.0
+offset_left = 396.0
+offset_top = 24.0
+offset_right = 850.0
+offset_bottom = 161.0
+scale = Vector2(0.8, 0.8)
 text = "RECORDS"
 label_settings = ExtResource("2_fq3dt")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 164.0
-offset_right = 186.0
-offset_bottom = 204.0
+offset_left = 130.0
+offset_top = 181.0
+offset_right = 170.0
+offset_bottom = 221.0
 
 [node name="Sair" type="Button" parent="."]
 layout_mode = 0
