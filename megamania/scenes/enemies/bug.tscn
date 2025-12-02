@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr8xwkjsoruyt"]
 
 [ext_resource type="PackedScene" uid="uid://do4w1fobj3axc" path="res://scenes/enemies/enemy_base.tscn" id="1_1cphh"]
-[ext_resource type="Script" uid="uid://ctkrrkshxmwos" path="res://scripts/enemy/bug.gd" id="2_0t6l1"]
-[ext_resource type="Texture2D" uid="uid://c0vf8bterlslx" path="res://assets/imagens/bug.png" id="3_t77sq"]
+[ext_resource type="Script" uid="uid://fdwxkfpgwg1f" path="res://scripts/enemy/bug.gd" id="2_0t6l1"]
+[ext_resource type="Texture2D" uid="uid://rcd2eiwj7dbr" path="res://assets/imagens/bug.png" id="3_t77sq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wgkba"]
-radius = 14.999996
+radius = 15.0
 height = 52.0
 
 [node name="Bug" instance=ExtResource("1_1cphh")]

@@ -1,4 +1,3 @@
-@tool
 class_name  Enemy
 extends Area2D
 
@@ -6,9 +5,11 @@ extends Area2D
 @export var speed_y: float = 200   # velocidade de descida
 @export var speed_x: float = 400   # velocidade horizontal
 var screen_size: Vector2
+var pontos: int = 10
 var posicao_inicial: Vector2 = Vector2.ZERO
 
 func _ready():
+	pontos = 10 + Levels.level * 10 + (Levels.velocidade - 1) * 80
 	screen_size = get_viewport_rect().size
 	if posicao_inicial == Vector2.ZERO: return
 		
@@ -70,4 +71,4 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("bullet_nave"):
 		area.queue_free()
 		morre()
-		Levels.soma_pontuacao()
+		Levels.soma_pontuacao(pontos)

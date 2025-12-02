@@ -5,4 +5,4 @@ func move_pattern(delta):
 
 func define_velocidade():
 	posicao_inicial += Vector2(-50, 0)
-	speed_x = 500  
+	speed_x = 500

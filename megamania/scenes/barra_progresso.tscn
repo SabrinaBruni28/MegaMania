@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dycm5diapwv64"]
+[gd_scene load_steps=8 format=3 uid="uid://dycm5diapwv64"]
 
 [ext_resource type="Script" uid="uid://bowc6pllu14to" path="res://scripts/barra_progresso.gd" id="1_fmdyd"]
 [ext_resource type="Texture2D" uid="uid://c2euqrjxpc4as" path="res://assets/imagens/nave.png" id="2_l2aoc"]
+[ext_resource type="AudioStream" uid="uid://nccidduw1yh7" path="res://assets/audios/Megamania_barra_carregando.mp3" id="3_nl5e8"]
+[ext_resource type="AudioStream" uid="uid://ba2s2tvwbdrxj" path="res://assets/audios/Megamania_barra_descarregando.mp3" id="4_xi02j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2aoc"]
 bg_color = Color(0.768627, 0.0196078, 0, 1)
@@ -65,5 +67,13 @@ position = Vector2(348, 78)
 rotation = 1.5708
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_l2aoc")
+
+[node name="Fill" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nl5e8")
+bus = &"Barra"
+
+[node name="Unfill" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xi02j")
+bus = &"Barra"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

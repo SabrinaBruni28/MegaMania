@@ -5,6 +5,9 @@ extends CharacterBody2D
 var screen_size: Vector2
 var can_shoot: bool = true
 @onready var animation: AnimationPlayer = $Animation
+@onready var shoot_sound: AudioStreamPlayer2D = $ShootSound
+@onready var morre_sound: AudioStreamPlayer2D = $MorreSound
+
 signal morreu
 
 func _ready() -> void:
@@ -32,10 +35,10 @@ func shoot():
 	var bullet = Levels.bullet_scene.instantiate()
 	get_parent().add_child(bullet)
 	bullet.add_to_group("bullet_nave")
-	bullet.speed = 600
+	bullet.speed = 700
 	bullet.atirar(position - Vector2(0, 50), Vector2(0, -1))
 	bullet.set_cor(Color.BROWN)
-	$ShootSound.play()
+	shoot_sound.play()
 	can_shoot = false
 
 func morre():
@@ -45,6 +48,7 @@ func morre():
 	# Permite processar mesmo com o jogo pausado
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	emit_signal("morreu")
+	morre_sound.play()
 	animation.play("morre")
 
 	await animation.animation_finished
@@ -52,4 +56,5 @@ func morre():
 	Levels.remove_vida()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is Bullet: area.queue_free()
 	morre()

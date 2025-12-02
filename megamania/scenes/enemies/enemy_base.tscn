@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://xrj1w4lqr0uo" path="res://assets/imagens/hamburguer.png" id="1_pkqou"]
 [ext_resource type="Script" uid="uid://b73kufm0jenq1" path="res://scripts/enemy/enemy_base.gd" id="1_qty17"]
-[ext_resource type="AudioStream" uid="uid://bnnvomhqhuogt" path="res://assets/audios/colisao.mp3" id="3_satqt"]
+[ext_resource type="AudioStream" uid="uid://dtmluh5isxgyo" path="res://assets/audios/Megamania_hit.mp3" id="3_satqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_satqt"]
 radius = 13.0
@@ -10,7 +10,6 @@ height = 54.0
 
 [node name="EnemyBase" type="Area2D" groups=["enemies"]]
 process_mode = 1
-position = Vector2(-16.6667, -16.6667)
 script = ExtResource("1_qty17")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,6 +22,7 @@ shape = SubResource("CapsuleShape2D_satqt")
 
 [node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_satqt")
+bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="."]
 

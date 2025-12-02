@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3iattc244wbg"]
 
 [ext_resource type="PackedScene" uid="uid://do4w1fobj3axc" path="res://scenes/enemies/enemy_base.tscn" id="1_qwu4m"]
-[ext_resource type="Script" uid="uid://pkqa4ya1mxis" path="res://scripts/enemy/steam_iron.gd" id="2_wbxkr"]
-[ext_resource type="Texture2D" uid="uid://croyhnkprtbgp" path="res://assets/imagens/steam_aron.png" id="3_fmexg"]
+[ext_resource type="Script" uid="uid://brkqwro3a0r4h" path="res://scripts/enemy/steam_iron.gd" id="2_wbxkr"]
+[ext_resource type="Texture2D" uid="uid://byx8jk0422mc0" path="res://assets/imagens/steam_aron.png" id="3_fmexg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_se25n"]
-size = Vector2(23, 50.999992)
+size = Vector2(23, 51)
 
 [node name="Steam Iron" instance=ExtResource("1_qwu4m")]
 script = ExtResource("2_wbxkr")
@@ -14,5 +14,5 @@ script = ExtResource("2_wbxkr")
 texture = ExtResource("3_fmexg")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(-0.5000428, -1.5000021)
+position = Vector2(-0.500043, -1.5)
 shape = SubResource("RectangleShape2D_se25n")

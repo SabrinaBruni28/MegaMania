@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://birqxjm7bpupy"]
+[gd_scene load_steps=5 format=3 uid="uid://birqxjm7bpupy"]
 
 [ext_resource type="PackedScene" uid="uid://do4w1fobj3axc" path="res://scenes/enemies/enemy_base.tscn" id="1_uyjhv"]
-[ext_resource type="Texture2D" uid="uid://gaftukji3ulb" path="res://assets/imagens/diamond.png" id="2_di621"]
-[ext_resource type="Script" uid="uid://dao0786qcrges" path="res://scripts/enemy/diamond.gd" id="2_dsrll"]
+[ext_resource type="Texture2D" uid="uid://cw11cqed5eu47" path="res://assets/imagens/diamond.png" id="2_di621"]
+[ext_resource type="Script" uid="uid://b3w5ifk2vtfjl" path="res://scripts/enemy/diamond.gd" id="2_dsrll"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_di621"]
+radius = 13.0
+height = 34.0
 
 [node name="Diamond" instance=ExtResource("1_uyjhv")]
 script = ExtResource("2_dsrll")
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(1, 2)
 texture = ExtResource("2_di621")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_di621")
