@@ -32,6 +32,7 @@ func reset_jogo():
 	pontuacao = 0
 	posicao = Vector2.ZERO
 	enemies_left = 0
+	proxima_vida = 10000
 
 func next_level():
 	level += 1
