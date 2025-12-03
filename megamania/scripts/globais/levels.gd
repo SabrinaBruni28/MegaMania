@@ -71,6 +71,7 @@ func soma_pontuacao(pontos:int = 100):
 	pontuacao += pontos
 	if pontuacao >= proxima_vida:
 		proxima_vida += 10000
+		Levels.vidas += 1
 		emit_signal("vida")
 
 func reinicia_jogo():

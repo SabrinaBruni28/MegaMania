@@ -42,9 +42,8 @@ func _start_timer():
 
 func adiciona_vida():
 	var a = vida.duplicate()
-	a.position.x += Levels.vidas * 50
+	a.position.x += (Levels.vidas - 1) * 50
 	a.visible = true
-	Levels.vidas += 1
 	add_child(a)
 
 func _on_timer_timeout() -> void:
