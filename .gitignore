@@ -24,9 +24,6 @@ Thumbs.db
 logs/
 *.log
 
-# Godot export templates (não precisam ir pro repo)
-export_presets.cfg
-
 # Pasta de builds
 /bin/
 build/

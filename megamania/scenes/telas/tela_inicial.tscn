@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://ct08u8twt760p"]
 
 [ext_resource type="LabelSettings" uid="uid://da58mpv4dmmmx" path="res://tres/titulo.tres" id="1_7exdg"]
-[ext_resource type="Script" uid="uid://bmt4uw1jq70nj" path="res://scripts/telas/tela_inicial.gd" id="1_qu5xs"]
+[ext_resource type="Script" uid="uid://deefu4qsoaq02" path="res://scripts/telas/tela_inicial.gd" id="1_qu5xs"]
 [ext_resource type="Theme" uid="uid://cgeeiqcn1fcru" path="res://tres/botao.tres" id="2_qu5xs"]
 [ext_resource type="PackedScene" uid="uid://b2cfmyb8y86ue" path="res://scenes/enemies/hamburguer.tscn" id="4_l684f"]
 [ext_resource type="PackedScene" uid="uid://dpomglw66kg62" path="res://scenes/enemies/cookie.tscn" id="5_q88pn"]
@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://e82nxi2j05vr" path="res://scenes/enemies/radial_tire.tscn" id="7_0qnyv"]
 [ext_resource type="PackedScene" uid="uid://boyfac4uhlwm1" path="res://scenes/enemies/space_dice.tscn" id="8_o4tnp"]
 [ext_resource type="PackedScene" uid="uid://d3iattc244wbg" path="res://scenes/enemies/steam_iron.tscn" id="9_sluqr"]
-[ext_resource type="AudioStream" uid="uid://bvf1fais7juh" path="res://assets/audios/mouse_click.mp3" id="12_0qnyv"]
-[ext_resource type="AudioStream" uid="uid://b4di5lkxxgs5r" path="res://assets/audios/mouse_hover.mp3" id="13_o4tnp"]
+[ext_resource type="AudioStream" uid="uid://diwrdjpmjmbve" path="res://assets/audios/mouse_click.mp3" id="12_0qnyv"]
+[ext_resource type="AudioStream" uid="uid://c6av2a7imlnes" path="res://assets/audios/mouse_hover.mp3" id="13_o4tnp"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_yycln"]
 scenes/1/scene = ExtResource("4_l684f")
@@ -89,6 +89,14 @@ bus = &"SFX"
 stream = ExtResource("13_o4tnp")
 bus = &"SFX"
 
+[connection signal="area_entered" from="TileMapLayer/Hamburguer" to="TileMapLayer/Hamburguer" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Cookie" to="TileMapLayer/Cookie" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Radial Tire" to="TileMapLayer/Radial Tire" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Steam Iron" to="TileMapLayer/Steam Iron" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Bug" to="TileMapLayer/Bug" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Diamond" to="TileMapLayer/Diamond" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/Space Dice" to="TileMapLayer/Space Dice" method="_on_area_entered"]
+[connection signal="area_entered" from="TileMapLayer/BowTie" to="TileMapLayer/BowTie" method="_on_area_entered"]
 [connection signal="mouse_entered" from="Jogar" to="." method="_on_jogar_mouse_entered"]
 [connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="mouse_entered" from="Records" to="." method="_on_records_mouse_entered"]
