@@ -7,6 +7,11 @@ viciante! 🎮✨
 
 ------------------------------------------------------------------------
 
+## Disponível
+[MegaMania](https://sabrinabruni28.github.io/MegaMania/)
+
+------------------------------------------------------------------------
+
 ## 🚀 Gameplay
 
 No MegaMania, você pilota uma nave espacial contra inimigos com
