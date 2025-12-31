@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://f2dqpk6p7q00"]
 
-[ext_resource type="Script" uid="uid://cyagpxacudnwm" path="res://scripts/telas/tela_records.gd" id="1_wn400"]
+[ext_resource type="Script" uid="uid://job2h6dj86g8" path="res://scripts/telas/tela_records.gd" id="1_wn400"]
 [ext_resource type="LabelSettings" uid="uid://da58mpv4dmmmx" path="res://tres/titulo.tres" id="2_fq3dt"]
 [ext_resource type="Theme" uid="uid://cgeeiqcn1fcru" path="res://tres/botao.tres" id="3_5wib7"]
-[ext_resource type="AudioStream" uid="uid://bvf1fais7juh" path="res://assets/audios/mouse_click.mp3" id="4_wew5o"]
-[ext_resource type="AudioStream" uid="uid://b4di5lkxxgs5r" path="res://assets/audios/mouse_hover.mp3" id="5_6or8k"]
+[ext_resource type="AudioStream" uid="uid://diwrdjpmjmbve" path="res://assets/audios/mouse_click.mp3" id="4_wew5o"]
+[ext_resource type="AudioStream" uid="uid://c6av2a7imlnes" path="res://assets/audios/mouse_hover.mp3" id="5_6or8k"]
 
 [node name="TelaRecords" type="Control"]
 layout_mode = 3
