@@ -23,17 +23,29 @@ func _input(event):
 	if not esperando_input:
 		return
 
+	# Teclado
 	if event is InputEventKey and event.pressed and not event.echo:
 		atribuir_evento(event)
+		return
 
-func atribuir_evento(event: InputEventKey):
+	# Botão do controle
+	if event is InputEventJoypadButton and event.pressed:
+		atribuir_evento(event)
+		return
+
+	# Analógico do controle
+	if event is InputEventJoypadMotion:
+		if abs(event.axis_value) > 0.6:
+			atribuir_evento(event)
+			return
+
+func atribuir_evento(event: InputEvent):
 	InputMap.action_erase_events(action_name)
 	InputMap.action_add_event(action_name, event.duplicate())
 
 	esperando_input = false
 	atualizar_texto()
 
-	# Restaura foco
 	focus_mode = foco_original
 	release_focus()
 
@@ -45,4 +57,9 @@ func atualizar_texto():
 	if eventos.is_empty():
 		text = "Não configurado"
 	else:
-		text = eventos[0].as_text()
+		text = limitar_texto(eventos[0].as_text(), 15)
+
+func limitar_texto(texto: String, limite: int) -> String:
+	if texto.length() <= limite:
+		return texto
+	return texto.substr(0, limite - 1) + "…"
