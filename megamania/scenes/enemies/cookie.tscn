@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpomglw66kg62"]
 
 [ext_resource type="PackedScene" uid="uid://do4w1fobj3axc" path="res://scenes/enemies/enemy_base.tscn" id="1_rbctq"]
-[ext_resource type="Script" uid="uid://wlowkah4at5k" path="res://scripts/enemy/cookie.gd" id="2_wwo5q"]
-[ext_resource type="Texture2D" uid="uid://dxasvrs0rbrn0" path="res://assets/imagens/cookie.png" id="3_evaqr"]
+[ext_resource type="Script" uid="uid://bj76au5qcoyb2" path="res://scripts/enemy/cookie.gd" id="2_wwo5q"]
+[ext_resource type="Texture2D" uid="uid://diq8woknvj04y" path="res://assets/imagens/cookie.png" id="3_evaqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to8pg"]
 size = Vector2(25.9999, 51.0001)

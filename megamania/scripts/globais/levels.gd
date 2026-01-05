@@ -9,7 +9,7 @@ var levels = [
 	"diamond",
 	"steam_iron",
 	"bow_tie",
-	"space_dice"
+	"space_dice",
 ]
 var level: int = 1
 # Atributos do player

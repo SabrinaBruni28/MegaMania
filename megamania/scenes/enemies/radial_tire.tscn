@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://e82nxi2j05vr"]
 
 [ext_resource type="PackedScene" uid="uid://do4w1fobj3axc" path="res://scenes/enemies/enemy_base.tscn" id="1_186lx"]
-[ext_resource type="Script" uid="uid://cgybm8ciuxyj4" path="res://scripts/enemy/radial_tire.gd" id="2_agyq7"]
-[ext_resource type="Texture2D" uid="uid://de7fec7arv8y4" path="res://assets/imagens/radial_tire.png" id="3_5o6fr"]
+[ext_resource type="Script" uid="uid://cppk7qep0042k" path="res://scripts/enemy/radial_tire.gd" id="2_agyq7"]
+[ext_resource type="Texture2D" uid="uid://c0o1vj4apafqi" path="res://assets/imagens/radial_tire.png" id="3_5o6fr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4n1a"]
 size = Vector2(29, 51)
