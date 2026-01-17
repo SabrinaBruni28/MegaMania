@@ -132,14 +132,14 @@ jobs:
       - name: Prepare files
         run: |
           # Windows
-          mv release/windows/MegaMania.exe release/MegaMania-Windows.exe
+          mv release/megamania-windows/MegaMania.exe release/MegaMania-Windows.exe
 
           # Linux (tar.gz preserva permissão)
-          chmod +x release/linux/MegaMania.x86_64
+          chmod +x release/megamania-linux/MegaMania.x86_64
           tar -czf release/MegaMania-Linux.tar.gz -C release/linux MegaMania.x86_64
 
           # Web
-          cd release/web
+          cd release/megamania-web
           zip -r ../MegaMania-Web.zip .
           cd ../..
 
