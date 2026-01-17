@@ -115,3 +115,40 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: export
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release
+
+      - name: Prepare files
+        run: |
+          # Windows
+          mv release/windows/MegaMania.exe release/MegaMania-Windows.exe
+
+          # Linux (tar.gz preserva permissão)
+          chmod +x release/linux/MegaMania.x86_64
+          tar -czf release/MegaMania-Linux.tar.gz -C release/linux MegaMania.x86_64
+
+          # Web
+          cd release/web
+          zip -r ../MegaMania-Web.zip .
+          cd ../..
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Catout v${{ github.run_number }}
+          files: |
+            release/MegaMania-Windows.exe
+            release/MegaMania-Linux.tar.gz
+            release/MegaMania-Web.zip
