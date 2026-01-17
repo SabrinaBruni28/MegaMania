@@ -136,7 +136,7 @@ jobs:
 
           # Linux (tar.gz preserva permissão)
           chmod +x release/megamania-linux/MegaMania.x86_64
-          tar -czf release/MegaMania-Linux.tar.gz -C release/linux MegaMania.x86_64
+          tar -czf release/MegaMania-Linux.tar.gz -C release/megamania-linux MegaMania.x86_64
 
           # Web
           cd release/megamania-web
